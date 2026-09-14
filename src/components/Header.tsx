@@ -77,7 +77,7 @@ export function Header() {
         
         {/* Top Right: Contact Info (Desktop) */}
         <div className="hidden lg:flex justify-end pt-5 pr-4 w-full z-20">
-          <div className="flex space-x-7 xl:space-x-10 text-[13px] font-semibold text-[#444]">
+          <div className="flex space-x-7 xl:space-x-10 text-[15px] font-semibold text-[#444]">
             <div className="flex items-center group">
               <Phone className="w-4 h-4 mr-2.5 text-[var(--color-primary)] stroke-[2] transition-transform duration-300 group-hover:scale-110" />
               <a href={`tel:${dubaiBranch.phone.replace(/\s+/g, '')}`} className="group-hover:text-[var(--color-primary)] transition-colors">
@@ -99,7 +99,7 @@ export function Header() {
 
         {/* Bottom Right: Nav (Desktop) */}
         <div className="hidden lg:flex absolute bottom-0 right-0 h-[56px] w-full justify-end items-center z-20 pr-6 pl-[280px] xl:pl-[380px] 2xl:pl-[480px]">
-          <nav className="flex items-center space-x-5 xl:space-x-7 text-white font-heading font-bold text-[12px] xl:text-[13px] tracking-widest h-full mr-auto">
+          <nav className="flex items-center space-x-5 xl:space-x-7 text-white font-heading font-bold text-sm xl:text-base tracking-widest h-full mr-auto">
             {navLinks.map((link) => (
               <div key={link.name} className="relative group h-full flex items-center">
                 <Link 

@@ -49,10 +49,10 @@ export function HeroSlider() {
               fetchPriority={index === 0 ? "high" : "auto"}
               loading={index === 0 ? "eager" : "lazy"}
               decoding="async"
-              className="w-full h-full object-cover opacity-40"
+              className="w-full h-full object-cover opacity-60 brightness-110"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/40 to-transparent"></div>
-            <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#1A1A1A] to-transparent opacity-80"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/30 to-transparent"></div>
+            <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#1A1A1A] to-transparent opacity-60"></div>
           </div>
           
           <div className="container-custom relative z-10 h-full flex items-center">

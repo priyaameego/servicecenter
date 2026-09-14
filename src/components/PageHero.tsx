@@ -27,7 +27,7 @@ export function PageHero({ title, image, breadcrumbs, height = 'md' }: PageHeroP
           <img
             src={image}
             alt={title}
-            className="w-full h-full object-cover opacity-25 scale-105"
+            className="w-full h-full object-cover opacity-40 brightness-110 scale-105"
             loading="eager"
             decoding="async"
           />
