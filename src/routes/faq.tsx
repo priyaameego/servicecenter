@@ -2,8 +2,7 @@ import { useState } from 'react';
 import { createFileRoute } from '@tanstack/react-router'
 import { SEO } from '../components/SEO'
 import { PageHero } from '../components/PageHero'
-import { Plus, Minus, Phone, Mail } from 'lucide-react'
-import { dubaiBranch } from '../data/business'
+import { Plus, Minus } from 'lucide-react'
 import { StillHaveQuestions } from '../sections/faq/StillHaveQuestions'
 import { EmergencyBanner } from '../sections/faq/EmergencyBanner'
 

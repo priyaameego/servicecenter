@@ -1,5 +1,5 @@
 import { createFileRoute, Link, notFound } from '@tanstack/react-router'
-import { Calendar, User, ArrowLeft, ArrowRight } from 'lucide-react'
+import { Calendar, User, ArrowLeft } from 'lucide-react'
 import { blogData } from '../../data/blogData'
 import { SEO } from '../../components/SEO'
 import { PageHero } from '../../components/PageHero'

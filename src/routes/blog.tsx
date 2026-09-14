@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { SEO } from '../components/SEO'
-import { Calendar, User, ArrowRight } from 'lucide-react'
+import { User, ArrowRight } from 'lucide-react'
 import { PageHero } from '../components/PageHero'
 import { blogData } from '../data/blogData'
 
