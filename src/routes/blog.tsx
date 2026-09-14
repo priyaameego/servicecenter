@@ -1,38 +1,14 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { SEO } from '../components/SEO'
-import { Calendar, User, ChevronRight } from 'lucide-react'
+import { Calendar, User, ArrowRight } from 'lucide-react'
 import { PageHero } from '../components/PageHero'
+import { blogData } from '../data/blogData'
 
 export const Route = createFileRoute('/blog')({
   component: Blog,
 })
 
-const blogPosts = [
-  {
-    id: 1,
-    title: "The Importance of Dynamic Balancing in Industrial Rotors",
-    excerpt: "Discover why dynamic balancing is critical for the longevity and efficiency of industrial rotating equipment...",
-    date: "August 15, 2023",
-    author: "Admin",
-    image: "https://images.unsplash.com/photo-1581092335397-9583eb92d232?q=80&w=600&auto=format&fit=crop"
-  },
-  {
-    id: 2,
-    title: "Signs Your AC Motor Needs Immediate Maintenance",
-    excerpt: "Learn to identify the early warning signs of motor failure before it leads to costly downtime and repairs...",
-    date: "September 02, 2023",
-    author: "Admin",
-    image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=600&auto=format&fit=crop"
-  },
-  {
-    id: 3,
-    title: "Generator Servicing: A Comprehensive Guide",
-    excerpt: "A step-by-step guide to maintaining your industrial generators to ensure they are ready when you need them most...",
-    date: "October 12, 2023",
-    author: "Admin",
-    image: "https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?q=80&w=600&auto=format&fit=crop"
-  }
-];
+const blogPosts = Object.values(blogData);
 
 function Blog() {
   return (
@@ -55,44 +31,64 @@ function Blog() {
       <section className="section-padding bg-[var(--color-bg-light)]">
         <div className="container-custom">
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-fade-in-up">
+          <div className="text-center mb-14">
+            <span className="section-eyebrow">Latest Updates</span>
+            <h2 className="section-title">OUR BLOG</h2>
+            <div className="section-divider-center" />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 reveal-group">
             {blogPosts.map((post) => (
-              <div key={post.id} className="bg-white border border-gray-100 rounded-sm shadow-sm hover:shadow-[var(--shadow-premium-hover)] hover:-translate-y-1.5 transition-all duration-500 ease-out group flex flex-col h-full">
-                <div className="overflow-hidden relative h-56">
+              <div key={post.id} className="group flex flex-col h-full bg-white border border-gray-100 shadow-[var(--shadow-premium)] hover:shadow-[var(--shadow-premium-hover)] transition-all duration-500 ease-out hover:-translate-y-2">
+                <div className="overflow-hidden relative h-64 bg-[#111]">
                   <img 
                     src={post.image} 
                     alt={post.title} 
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
+                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110 opacity-90 group-hover:opacity-100" 
                   />
-                  <div className="absolute top-4 left-4 bg-[var(--color-primary)] text-white px-3 py-1 text-xs font-bold uppercase">
-                    NEWS
+                  <div className="absolute top-0 left-0 bg-[var(--color-primary)] text-white px-4 py-1.5 text-xs font-bold uppercase tracking-widest shadow-lg">
+                    Latest News
                   </div>
                 </div>
                 
-                <div className="p-6 md:p-8 flex flex-col flex-grow">
-                  <div className="flex items-center text-sm text-gray-500 mb-4 space-x-4">
+                <div className="p-8 flex flex-col flex-grow relative">
+                  {/* Floating Date Badge */}
+                  <div className="absolute -top-6 right-8 bg-white border border-gray-100 shadow-md flex flex-col items-center justify-center p-2 min-w-[3.5rem] z-10">
+                    <span className="text-[var(--color-primary)] font-bold text-xl leading-none">
+                      {post.date.split(' ')[1].replace(',', '')}
+                    </span>
+                    <span className="text-gray-500 text-xs font-bold uppercase tracking-wider">
+                      {post.date.split(' ')[0].substring(0, 3)}
+                    </span>
+                  </div>
+
+                  <div className="flex items-center text-xs font-semibold text-gray-500 mb-4 uppercase tracking-wider">
                     <div className="flex items-center">
-                      <Calendar className="w-4 h-4 mr-1.5 text-[var(--color-primary)]" />
-                      {post.date}
-                    </div>
-                    <div className="flex items-center">
-                      <User className="w-4 h-4 mr-1.5 text-[var(--color-primary)]" />
+                      <User className="w-3.5 h-3.5 mr-1.5 text-[var(--color-primary)]" />
                       {post.author}
                     </div>
                   </div>
                   
-                  <h3 className="text-xl font-bold mb-4 text-[#1A1A1A] group-hover:text-[var(--color-primary)] transition-colors duration-300 leading-snug">
+                  <h3 
+                    className="text-xl md:text-2xl font-bold mb-4 text-[#111111] group-hover:text-[var(--color-primary)] transition-colors duration-300 leading-tight"
+                    style={{ fontFamily: 'var(--font-heading)' }}
+                  >
                     <Link to={`/blog/${post.id}` as any}>{post.title}</Link>
                   </h3>
                   
-                  <p className="text-[#555555] mb-6 flex-grow line-clamp-3">
+                  <p className="text-[#555555] mb-8 flex-grow line-clamp-3 text-sm leading-[1.85]">
                     {post.excerpt}
                   </p>
                   
-                  <Link to={`/blog/${post.id}` as any} className="inline-flex items-center text-[#1A1A1A] font-bold text-sm group-hover:text-[var(--color-primary)] transition-colors duration-300 mt-auto">
-                    READ MORE
-                    <ChevronRight className="w-4 h-4 ml-1 transition-transform duration-300 group-hover:translate-x-1" />
-                  </Link>
+                  <div className="mt-auto pt-5 border-t border-gray-100">
+                    <Link 
+                      to={`/blog/${post.id}` as any} 
+                      className="inline-flex items-center text-[#111111] font-bold text-xs uppercase tracking-widest group-hover:text-[var(--color-primary)] transition-all duration-300"
+                    >
+                      Read More
+                      <ArrowRight className="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
+                    </Link>
+                  </div>
                 </div>
               </div>
             ))}

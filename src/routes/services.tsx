@@ -5,6 +5,8 @@ import { ServiceCard } from '../components/ui/ServiceCard'
 import { AlertCircle, CheckCircle2 } from 'lucide-react'
 import { SEO } from '../components/SEO'
 import { PageHero } from '../components/PageHero'
+import { WhyRepairWithUs } from '../sections/services/WhyRepairWithUs'
+import { WarrantyGuarantee } from '../sections/services/WarrantyGuarantee'
 
 interface ContactFormData {
   name: string;
@@ -21,38 +23,38 @@ const services = [
   {
     title: 'POWER TOOLS',
     image: '/1.jpeg',
-    imageAlt: 'Professional cordless power drill representing AC/DC motor applications',
-    link: '/services/ac-dc-motor'
+    imageAlt: 'Professional cordless power drill',
+    link: '/services/power-tools'
   },
   {
     title: 'RICE COOKER',
     image: '/7.jpeg',
-    imageAlt: 'Electric rice cooker representing power generation and heat applications',
-    link: '/services/generators'
+    imageAlt: 'Electric rice cooker',
+    link: '/services/rice-cooker'
   },
   {
     title: 'BLENDER & FOOD PROCESSOR',
     image: '/2.jpeg',
-    imageAlt: 'Food processor and blender representing high-speed rotating parts',
-    link: '/services/rotating-parts'
+    imageAlt: 'Food processor and blender',
+    link: '/services/blender-food-processor'
   },
   {
     title: 'GARMENT STEAMER',
     image: '/5.jpeg',
-    imageAlt: 'Handheld garment steamer representing water pump and fluid dynamics',
-    link: '/services/water-pumps'
+    imageAlt: 'Handheld garment steamer',
+    link: '/services/garment-steamer'
   },
   {
     title: 'VACUUM CLEANER',
     image: '/6.jpeg',
-    imageAlt: 'Handheld cordless vacuum cleaner representing compressors and stators',
-    link: '/services/compressor-stator'
+    imageAlt: 'Handheld cordless vacuum cleaner',
+    link: '/services/vacuum-cleaner'
   },
   {
     title: 'ELECTRIC JIGSAW',
     image: '/4.jpeg',
-    imageAlt: 'Electric jigsaw tool representing precision dynamic balancing',
-    link: '/services/dynamic-balancing'
+    imageAlt: 'Electric jigsaw tool',
+    link: '/services/electric-jigsaw'
   }
 ];
 
@@ -94,10 +96,10 @@ function Services() {
   }
 
   return (
-    <div>
+    <div className="flex flex-col w-full overflow-hidden">
       <SEO 
         title="Our Services" 
-        description="Explore our comprehensive range of industrial services including AC/DC motor repair, generator maintenance, and dynamic balancing." 
+        description="Explore our comprehensive range of services including power tool repair, appliance maintenance, and diagnostic testing for top brands." 
         path="/services" 
       />
       <PageHero
@@ -112,16 +114,16 @@ function Services() {
       {/* Services Grid */}
       <section className="section-padding bg-[var(--color-bg-light)]">
         <div className="container-custom">
-          <div className="text-center mb-12 animate-fade-in-up">
+          <div className="text-center mb-12 reveal">
             <span className="text-[var(--color-primary)] font-bold uppercase tracking-wider text-sm mb-2 block">What We Do?</span>
             <h2 className="text-3xl md:text-4xl font-extrabold mb-4">OUR SERVICES OVERVIEW</h2>
             <div className="w-20 h-1 bg-[var(--color-primary)] mx-auto mb-6"></div>
-            <p className="text-[#555555] max-w-2xl mx-auto">
-              Welcome to our comprehensive suite of electrical machinery services, where precision meets performance.
+            <p className="text-[#555555] max-w-2xl mx-auto leading-relaxed">
+              Welcome to our comprehensive suite of repair services, where precision meets performance.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 reveal-group">
             {services.map((service, index) => (
               <ServiceCard 
                 key={index}
@@ -135,10 +137,16 @@ function Services() {
         </div>
       </section>
 
+      {/* NEW: Why Repair With Us */}
+      <WhyRepairWithUs />
+
+      {/* NEW: Warranty Guarantee */}
+      <WarrantyGuarantee />
+
       {/* Consultation Section */}
       <section className="section-padding bg-white relative">
         <div className="container-custom">
-          <div className="max-w-3xl mx-auto bg-white shadow-[var(--shadow-premium-hover)] p-8 md:p-12 -mt-24 relative z-20 border-t-4 border-[var(--color-primary)] rounded-sm animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+          <div className="max-w-3xl mx-auto bg-white shadow-[var(--shadow-premium-hover)] p-8 md:p-12 relative z-20 border-t-4 border-[var(--color-primary)] rounded-sm reveal">
             <div className="text-center mb-8">
               <h2 className="text-2xl md:text-3xl font-extrabold mb-4">NEED CONSULTATION?</h2>
               <p className="text-[#555555]">

@@ -2,9 +2,12 @@ import { createFileRoute } from '@tanstack/react-router';
 import { SEO } from '../components/SEO';
 import { HeroSlider } from '../sections/home/HeroSlider';
 import { IntroSection } from '../sections/home/IntroSection';
+import { WhyChooseUs } from '../sections/home/WhyChooseUs';
 import { ServicesOverview } from '../sections/home/ServicesOverview';
 import { AuthorizedBrands } from '../sections/home/AuthorizedBrands';
+import { RepairProcess } from '../sections/home/RepairProcess';
 import { StatsSection } from '../sections/home/StatsSection';
+import { HomeBlogSection } from '../sections/home/HomeBlogSection';
 
 export const Route = createFileRoute('/')({
   component: Index,
@@ -12,10 +15,10 @@ export const Route = createFileRoute('/')({
 
 function Index() {
   return (
-    <div className="flex flex-col w-full">
+    <div className="flex flex-col w-full overflow-hidden">
       <SEO 
         title="Home" 
-        description="ServiceCenter.ae - Expert industrial repair, rewinding, dynamic balancing, and electromechanical maintenance for AC/DC motors, generators, and machinery in Dubai." 
+        description="ServiceCenter.ae - Authorized service center for power tools and appliances in Dubai. Specializing in genuine parts and expert repair for Stanley, Black+Decker, and DeWalt." 
         path="/" 
       />
       
@@ -24,17 +27,26 @@ function Index() {
       
       {/* 2. Intro / What We Do */}
       <IntroSection />
+
+      {/* 3. Why Choose Us / Premium Features */}
+      <WhyChooseUs />
       
-      {/* 3. Services Grid */}
+      {/* 4. Services Grid */}
       <ServicesOverview />
       
-      {/* 4. Authorized Service Center Brands */}
+      {/* 5. Authorized Service Center Brands */}
       <AuthorizedBrands />
+
+      {/* 6. Repair Process Timeline */}
+      <RepairProcess />
       
-      {/* 5. What We've Done (Statistics/Counters banner) */}
+      {/* 7. What We've Done (Statistics/Counters banner) */}
       <StatsSection />
+
+      {/* 8. Latest Blog Posts */}
+      <HomeBlogSection />
       
-      {/* Note: 6. Call to Action Banner is globally rendered in the Footer component as per the LHE.AE structure */}
+      {/* Note: Call to Action Banner is globally rendered in the Footer component */}
     </div>
   );
 }

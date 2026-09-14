@@ -1,11 +1,9 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { SEO } from '../components/SEO'
-import {
-  ShieldCheck, Award, AlertTriangle, ClipboardCheck,
-  Star, Clock, DollarSign, MessageSquare, Lock,
-  AlertCircle, Leaf, Wrench
-} from 'lucide-react'
+import { Award, AlertTriangle, ClipboardCheck, Star, Clock, DollarSign, MessageSquare, Lock, AlertCircle, Leaf, Wrench, ShieldCheck } from 'lucide-react'
 import { PageHero } from '../components/PageHero'
+import { Certifications } from '../sections/quality/Certifications'
+import { TestingFacility } from '../sections/quality/TestingFacility'
 
 export const Route = createFileRoute('/quality-standards')({
   component: QualityStandards,
@@ -95,29 +93,20 @@ const servicePolicy = [
   },
 ]
 
-const certifications = [
-  { code: 'ISO 9001:2015', label: 'Quality Management Systems' },
-  { code: 'ISO 14001:2015', label: 'Environmental Management Systems' },
-  { code: 'ISO 27001:2022', label: 'Information Security & Privacy Protection' },
-  { code: 'ISO 45001:2018', label: 'Occupational Health & Safety Management' },
-]
-
-const trainingBadges = ['Fire Fighting', 'First Aid']
-
 function QualityStandards() {
   return (
-    <div>
-      <SEO
-        title="Quality & Standards"
-        description="ServiceCenter.ae is committed to uncompromising quality, customer service and safety. ISO 9001, 14001, 27001 & 45001 certified service center in Dubai, UAE."
-        path="/quality-standards"
+    <div className="flex flex-col w-full overflow-hidden">
+      <SEO 
+        title="Quality & Safety" 
+        description="Learn about our stringent quality and safety standards, ISO certifications, and testing procedures for electromechanical repairs." 
+        path="/quality-standards" 
       />
       <PageHero
-        title="Quality & Standards"
-        image="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2000&auto=format&fit=crop"
+        title="Quality Standards"
+        image="https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=2000&auto=format&fit=crop"
         breadcrumbs={[
           { label: 'Home', to: '/' },
-          { label: 'Quality & Standards' },
+          { label: 'Quality Standards' },
         ]}
       />
 
@@ -130,7 +119,7 @@ function QualityStandards() {
             <h2 className="section-title">QUALITY &amp; SAFETY POLICY</h2>
             <div className="section-divider-center mb-6" />
             <p className="text-[#555555] max-w-3xl mx-auto text-base leading-[1.85]">
-              ServiceCenter.ae prides itself on its commitment to quality, customer service and safety, and has spent years developing into a full-service company with the ability to adapt to customers' every need.
+              ServiceCenter.ae prides itself on its commitment to quality, customer service and safety. As an authorized service center for premier tool and appliance brands, we have developed rigorous internal standards to ensure every repair meets OEM specifications.
             </p>
           </div>
 
@@ -145,13 +134,13 @@ function QualityStandards() {
                 <h3 className="text-2xl font-bold tracking-wide">QUALITY</h3>
               </div>
               <p className="text-[#555555] leading-[1.85] mb-6">
-                ServiceCenter.ae is committed to providing industry with a premium standard of excellence. We are dedicated to working with our customers to ensure that their needs and concerns are addressed and solutions are provided. We produce a product of uncompromising quality and are not satisfied until our customer is satisfied.
+                ServiceCenter.ae is committed to providing our clients with a premium standard of excellence. We are dedicated to working closely with our customers to ensure that their equipment repair needs are met with precision. We deliver a repair of uncompromising quality and are not satisfied until our customer is satisfied.
               </p>
               <ul className="space-y-3">
                 {[
-                  'Rigorous testing protocols for all repaired machinery.',
-                  'Use of premium-grade, certified genuine spare parts.',
-                  'Continuous training and development for our technical staff.',
+                  'Rigorous diagnostic and post-repair testing protocols.',
+                  'Exclusive use of premium-grade, certified genuine spare parts.',
+                  'Continuous manufacturer-led training for our technical staff.',
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3">
                     <span className="mt-1 w-4 h-4 flex-shrink-0 bg-[var(--color-primary)] text-white rounded-full flex items-center justify-center text-[10px] font-bold">✓</span>
@@ -170,13 +159,13 @@ function QualityStandards() {
                 <h3 className="text-2xl font-bold tracking-wide">SAFETY</h3>
               </div>
               <p className="text-[#555555] leading-[1.85] mb-6">
-                Safety on and off the job is stressed and enforced at ServiceCenter.ae. Employees that work on customers' sites adhere strictly to the owners' safety policies, as well as the 'ServiceCenter Safety Policy'. Management is proud of the excellent safety record of its team and will continue to work closely with employees to ensure continued success in this area.
+                Safety within our workshop is stressed and strictly enforced at ServiceCenter.ae. Our technicians adhere to comprehensive safety guidelines when handling, diagnosing, and testing high-powered equipment and appliances. Management is proud of the excellent safety record of our team and ensures a secure environment for both staff and visiting customers.
               </p>
               <ul className="space-y-3">
                 {[
-                  'Mandatory PPE for all workshop and on-site staff.',
-                  'Regular safety audits and risk assessments.',
-                  'Zero-tolerance policy for safety violations.',
+                  'Mandatory protective gear for all workshop technicians.',
+                  'Regular tool calibration and electrical safety audits.',
+                  'Zero-tolerance policy for safety standard violations.',
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3">
                     <span className="mt-1 w-4 h-4 flex-shrink-0 bg-[var(--color-primary)] text-white rounded-full flex items-center justify-center text-[10px] font-bold">✓</span>
@@ -186,34 +175,14 @@ function QualityStandards() {
               </ul>
             </div>
           </div>
-
-          {/* ── ISO CERTIFICATIONS ── */}
-          <div className="bg-[#111111] p-10 md:p-14 text-center rounded-sm reveal mb-16 relative overflow-hidden">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-32 bg-[var(--color-primary)] opacity-[0.06] blur-3xl pointer-events-none" />
-            <ShieldCheck className="w-14 h-14 text-[var(--color-primary)] mx-auto mb-5" />
-            <span className="section-eyebrow !text-[var(--color-primary)]">Internationally Recognised</span>
-            <h3 className="text-2xl md:text-3xl font-bold text-white uppercase tracking-wider mb-2">ISO CERTIFICATIONS</h3>
-            <div className="w-10 h-[3px] bg-[var(--color-primary)] mx-auto mb-8" />
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-              {certifications.map(({ code, label }) => (
-                <div key={code} className="bg-white/5 border border-white/10 p-5 hover:border-[var(--color-primary)]/50 hover:bg-white/10 transition-all duration-300 group rounded-sm text-left">
-                  <div className="text-[var(--color-primary)] font-bold text-sm mb-1 tracking-wider">{code}</div>
-                  <div className="text-white/60 text-xs leading-relaxed">{label}</div>
-                </div>
-              ))}
-            </div>
-            {/* Training badges */}
-            <div className="flex justify-center gap-4 flex-wrap">
-              {trainingBadges.map((badge) => (
-                <span key={badge} className="inline-flex items-center gap-2 bg-[var(--color-primary)]/10 border border-[var(--color-primary)]/30 text-[var(--color-primary)] text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-sm">
-                  ✓ {badge}
-                </span>
-              ))}
-            </div>
-          </div>
-
         </div>
       </section>
+
+      {/* NEW: Certifications Section */}
+      <Certifications />
+
+      {/* NEW: Testing Facility Section */}
+      <TestingFacility />
 
       {/* ── SERVICE EXCELLENCE POLICY ── */}
       <section className="section-padding bg-[var(--color-bg-light)]">

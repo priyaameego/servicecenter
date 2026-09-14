@@ -5,38 +5,38 @@ const services = [
   {
     title: 'POWER TOOLS',
     image: '/1.jpeg',
-    imageAlt: 'Professional cordless power drill representing AC/DC motor applications',
-    link: '/services/ac-dc-motor'
+    imageAlt: 'Professional cordless power drill',
+    link: '/services/power-tools'
   },
   {
     title: 'RICE COOKER',
     image: '/7.jpeg',
-    imageAlt: 'Electric rice cooker representing power generation and heat applications',
-    link: '/services/generators'
+    imageAlt: 'Electric rice cooker',
+    link: '/services/rice-cooker'
   },
   {
     title: 'BLENDER & FOOD PROCESSOR',
     image: '/2.jpeg',
-    imageAlt: 'Food processor and blender representing high-speed rotating parts',
-    link: '/services'
+    imageAlt: 'Food processor and blender',
+    link: '/services/blender-food-processor'
   },
   {
     title: 'GARMENT STEAMER',
     image: '/5.jpeg',
-    imageAlt: 'Handheld garment steamer representing water pump and fluid dynamics',
-    link: '/services/water-pumps'
+    imageAlt: 'Handheld garment steamer',
+    link: '/services/garment-steamer'
   },
   {
     title: 'VACUUM CLEANER',
     image: '/6.jpeg',
-    imageAlt: 'Handheld cordless vacuum cleaner representing compressors and stators',
-    link: '/services/compressor-stator'
+    imageAlt: 'Handheld cordless vacuum cleaner',
+    link: '/services/vacuum-cleaner'
   },
   {
     title: 'ELECTRIC JIGSAW',
     image: '/4.jpeg',
-    imageAlt: 'Electric jigsaw tool representing precision dynamic balancing',
-    link: '/services/dynamic-balancing'
+    imageAlt: 'Electric jigsaw tool',
+    link: '/services/electric-jigsaw'
   }
 ];
 

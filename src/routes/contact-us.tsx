@@ -5,6 +5,8 @@ import { Button } from '../components/ui/Button'
 import { dubaiBranch } from '../data/business'
 import { SEO } from '../components/SEO'
 import { PageHero } from '../components/PageHero'
+import { LocationHighlights } from '../sections/contact/LocationHighlights'
+import { BusinessHours } from '../sections/contact/BusinessHours'
 
 interface ContactFormData {
   name: string;
@@ -55,10 +57,10 @@ function ContactUs() {
   }
 
   return (
-    <div>
+    <div className="flex flex-col w-full overflow-hidden">
       <SEO 
         title="Contact Us" 
-        description="Contact ServiceCenter.ae (Light House Electrical Co.) for expert motor repair, rewinding, and industrial servicing in Dubai, UAE." 
+        description="Contact ServiceCenter.ae for expert power tool and appliance repair in Dubai, UAE." 
         path="/contact-us" 
       />
       <PageHero
@@ -73,102 +75,128 @@ function ContactUs() {
       <section className="section-padding bg-white">
         <div className="container-custom">
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16 animate-fade-in-up">
-            <div className="bg-white p-8 text-center border border-gray-100 shadow-sm hover:shadow-[var(--shadow-premium-hover)] hover:-translate-y-1.5 transition-all duration-500 ease-out group rounded-sm">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16 reveal-group">
+            <div className="bg-white p-8 text-center border border-gray-100 shadow-[var(--shadow-premium)] hover:shadow-[var(--shadow-premium-hover)] hover:-translate-y-1.5 transition-all duration-500 ease-out group rounded-sm reveal">
               <MapPin className="w-12 h-12 text-[var(--color-primary)] mx-auto mb-4 transition-transform duration-500 group-hover:scale-110" />
-              <h3 className="font-bold text-lg mb-2 uppercase">Address</h3>
+              <h3 className="font-bold text-lg mb-2 uppercase" style={{ fontFamily: 'var(--font-heading)' }}>Address</h3>
               <p className="text-[#555555]">{dubaiBranch.address.fullAddress}</p>
             </div>
             
-            <div className="bg-white p-8 text-center border border-gray-100 shadow-sm hover:shadow-[var(--shadow-premium-hover)] hover:-translate-y-1.5 transition-all duration-500 ease-out group rounded-sm">
+            <div className="bg-white p-8 text-center border border-gray-100 shadow-[var(--shadow-premium)] hover:shadow-[var(--shadow-premium-hover)] hover:-translate-y-1.5 transition-all duration-500 ease-out group rounded-sm reveal">
               <Phone className="w-12 h-12 text-[var(--color-primary)] mx-auto mb-4 transition-transform duration-500 group-hover:scale-110" />
-              <h3 className="font-bold text-lg mb-2 uppercase">Phone Number</h3>
-              <a href={`tel:${dubaiBranch.phone.replace(/\s+/g, '')}`} className="text-[#555555] hover:text-[var(--color-primary)] block">{dubaiBranch.phone}</a>
+              <h3 className="font-bold text-lg mb-2 uppercase" style={{ fontFamily: 'var(--font-heading)' }}>Phone Number</h3>
+              <a href={`tel:${dubaiBranch.phone.replace(/\s+/g, '')}`} className="text-[#555555] hover:text-[var(--color-primary)] block transition-colors">{dubaiBranch.phone}</a>
             </div>
             
-            <div className="bg-white p-8 text-center border border-gray-100 shadow-sm hover:shadow-[var(--shadow-premium-hover)] hover:-translate-y-1.5 transition-all duration-500 ease-out group rounded-sm">
+            <div className="bg-white p-8 text-center border border-gray-100 shadow-[var(--shadow-premium)] hover:shadow-[var(--shadow-premium-hover)] hover:-translate-y-1.5 transition-all duration-500 ease-out group rounded-sm reveal">
               <Mail className="w-12 h-12 text-[var(--color-primary)] mx-auto mb-4 transition-transform duration-500 group-hover:scale-110" />
-              <h3 className="font-bold text-lg mb-2 uppercase">Email Address</h3>
-              <a href={`mailto:${dubaiBranch.email}`} className="text-[#555555] hover:text-[var(--color-primary)] block">{dubaiBranch.email}</a>
+              <h3 className="font-bold text-lg mb-2 uppercase" style={{ fontFamily: 'var(--font-heading)' }}>Email Address</h3>
+              <a href={`mailto:${dubaiBranch.email}`} className="text-[#555555] hover:text-[var(--color-primary)] block transition-colors">{dubaiBranch.email}</a>
             </div>
             
-            <div className="bg-white p-8 text-center border border-gray-100 shadow-sm hover:shadow-[var(--shadow-premium-hover)] hover:-translate-y-1.5 transition-all duration-500 ease-out group rounded-sm">
+            <div className="bg-white p-8 text-center border border-gray-100 shadow-[var(--shadow-premium)] hover:shadow-[var(--shadow-premium-hover)] hover:-translate-y-1.5 transition-all duration-500 ease-out group rounded-sm reveal">
               <Clock className="w-12 h-12 text-[var(--color-primary)] mx-auto mb-4 transition-transform duration-500 group-hover:scale-110" />
-              <h3 className="font-bold text-lg mb-2 uppercase">Working Hours</h3>
+              <h3 className="font-bold text-lg mb-2 uppercase" style={{ fontFamily: 'var(--font-heading)' }}>Working Hours</h3>
               <p className="text-[#555555]">Mon-Sat: 8:00am - 6:00pm</p>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-            <div className="bg-white p-8 md:p-10 shadow-lg border border-gray-100 rounded-sm">
-              <span className="text-[var(--color-primary)] font-bold uppercase tracking-wider text-sm mb-2 block">Send Message</span>
-              <h2 className="text-3xl md:text-4xl font-extrabold mb-6">GET IN TOUCH</h2>
-              <div className="w-20 h-1 bg-[var(--color-primary)] mb-8"></div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 reveal">
+            <div className="bg-white p-8 md:p-12 shadow-2xl border border-gray-100 rounded-sm relative overflow-hidden group">
+              {/* Premium Background Accent */}
+              <div className="absolute top-0 right-0 w-64 h-64 bg-[var(--color-primary)] opacity-5 blur-3xl pointer-events-none rounded-full transition-transform duration-1000 group-hover:scale-150" />
+              
+              <span className="section-eyebrow relative z-10">Send Message</span>
+              <h2 className="text-3xl md:text-4xl font-extrabold mb-6 relative z-10 uppercase tracking-tight" style={{ fontFamily: 'var(--font-heading)' }}>
+                GET IN TOUCH
+              </h2>
+              <div className="w-20 h-1 bg-[var(--color-primary)] mb-10 relative z-10 transition-all duration-500 group-hover:w-32"></div>
               
               {isSuccess && (
-                <div className="mb-6 p-4 bg-green-50 border-l-4 border-green-500 flex items-start">
-                  <CheckCircle2 className="w-5 h-5 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
-                  <p className="text-green-700 font-medium">Thank you! Your message has been submitted successfully.</p>
+                <div className="mb-8 p-5 bg-green-50 border-l-4 border-green-500 flex items-start animate-fade-in-up">
+                  <CheckCircle2 className="w-6 h-6 text-green-500 mr-4 flex-shrink-0 mt-0.5" />
+                  <p className="text-green-800 font-medium leading-relaxed">Thank you for reaching out! Your message has been submitted successfully and our team will get back to you shortly.</p>
                 </div>
               )}
 
               {validationError && (
-                <div className="mb-6 p-4 bg-yellow-50 border-l-4 border-yellow-500 flex items-start">
-                  <AlertCircle className="w-5 h-5 text-yellow-600 mr-3 flex-shrink-0 mt-0.5" />
-                  <p className="text-yellow-700 font-medium">{validationError}</p>
+                <div className="mb-8 p-5 bg-yellow-50 border-l-4 border-yellow-500 flex items-start animate-fade-in-up">
+                  <AlertCircle className="w-6 h-6 text-yellow-600 mr-4 flex-shrink-0 mt-0.5" />
+                  <p className="text-yellow-800 font-medium leading-relaxed">{validationError}</p>
                 </div>
               )}
               
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <form onSubmit={handleSubmit} className="space-y-8 relative z-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  {/* Name Input */}
+                  <div className="relative group/input">
+                    <input 
+                      type="text" 
+                      placeholder="Your Name *" 
+                      value={formData.name}
+                      onChange={(e) => setFormData({...formData, name: e.target.value})}
+                      disabled={isSubmitting}
+                      className="w-full px-0 py-3 bg-transparent border-b-2 border-gray-200 focus:outline-none transition-colors disabled:opacity-50 text-[#111111] placeholder-gray-400 font-medium peer"
+                    />
+                    <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--color-primary)] transition-all duration-500 peer-focus:w-full" />
+                  </div>
+                  
+                  {/* Email Input */}
+                  <div className="relative group/input">
+                    <input 
+                      type="email" 
+                      placeholder="Your Email *" 
+                      value={formData.email}
+                      onChange={(e) => setFormData({...formData, email: e.target.value})}
+                      disabled={isSubmitting}
+                      className="w-full px-0 py-3 bg-transparent border-b-2 border-gray-200 focus:outline-none transition-colors disabled:opacity-50 text-[#111111] placeholder-gray-400 font-medium peer"
+                    />
+                    <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--color-primary)] transition-all duration-500 peer-focus:w-full" />
+                  </div>
+                </div>
+                
+                {/* Subject Input */}
+                <div className="relative group/input">
                   <input 
                     type="text" 
-                    placeholder="Your Name *" 
-                    value={formData.name}
-                    onChange={(e) => setFormData({...formData, name: e.target.value})}
+                    placeholder="Subject *" 
+                    value={formData.subject}
+                    onChange={(e) => setFormData({...formData, subject: e.target.value})}
                     disabled={isSubmitting}
-                    className="w-full px-5 py-4 bg-[var(--color-bg-light)] border border-transparent focus:border-[var(--color-primary)] focus:bg-white focus:outline-none transition-colors disabled:opacity-50"
+                    className="w-full px-0 py-3 bg-transparent border-b-2 border-gray-200 focus:outline-none transition-colors disabled:opacity-50 text-[#111111] placeholder-gray-400 font-medium peer"
                   />
-                  <input 
-                    type="email" 
-                    placeholder="Your Email *" 
-                    value={formData.email}
-                    onChange={(e) => setFormData({...formData, email: e.target.value})}
-                    disabled={isSubmitting}
-                    className="w-full px-5 py-4 bg-[var(--color-bg-light)] border border-transparent focus:border-[var(--color-primary)] focus:bg-white focus:outline-none transition-colors disabled:opacity-50"
-                  />
+                  <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--color-primary)] transition-all duration-500 peer-focus:w-full" />
                 </div>
-                <input 
-                  type="text" 
-                  placeholder="Subject *" 
-                  value={formData.subject}
-                  onChange={(e) => setFormData({...formData, subject: e.target.value})}
-                  disabled={isSubmitting}
-                  className="w-full px-5 py-4 bg-[var(--color-bg-light)] border border-transparent focus:border-[var(--color-primary)] focus:bg-white focus:outline-none transition-colors disabled:opacity-50"
-                />
-                <textarea 
-                  placeholder="Your Message *" 
-                  rows={6}
-                  value={formData.message}
-                  onChange={(e) => setFormData({...formData, message: e.target.value})}
-                  disabled={isSubmitting}
-                  className="w-full px-5 py-4 bg-[var(--color-bg-light)] border border-transparent focus:border-[var(--color-primary)] focus:bg-white focus:outline-none transition-colors resize-none disabled:opacity-50"
-                ></textarea>
-                <Button 
-                  type="submit" 
-                  variant="primary" 
-                  className="px-10"
-                  disabled={isSubmitting}
-                >
-                  {isSubmitting ? 'SENDING...' : 'SEND MESSAGE'}
-                </Button>
+                
+                {/* Message Input */}
+                <div className="relative group/input">
+                  <textarea 
+                    placeholder="Your Message *" 
+                    rows={5}
+                    value={formData.message}
+                    onChange={(e) => setFormData({...formData, message: e.target.value})}
+                    disabled={isSubmitting}
+                    className="w-full px-0 py-3 bg-transparent border-b-2 border-gray-200 focus:outline-none transition-colors resize-none disabled:opacity-50 text-[#111111] placeholder-gray-400 font-medium peer"
+                  ></textarea>
+                  <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--color-primary)] transition-all duration-500 peer-focus:w-full" />
+                </div>
+                
+                <div className="pt-2">
+                  <Button 
+                    type="submit" 
+                    variant="primary" 
+                    className="w-full md:w-auto px-12 py-4 text-sm tracking-widest shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? 'SENDING...' : 'SEND MESSAGE'}
+                  </Button>
+                </div>
               </form>
             </div>
             
-            <div className="h-[400px] lg:h-auto min-h-[400px] bg-gray-200 rounded-sm overflow-hidden shadow-lg border border-gray-100">
-              {/* Note: In a real implementation, use an actual Google Maps iframe or Google Maps API component here */}
+            <div className="h-[400px] lg:h-auto min-h-[400px] bg-gray-200 rounded-sm overflow-hidden shadow-[var(--shadow-premium)] border border-gray-100">
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115450.41376910609!2d55.35245802241684!3d25.316823377708573!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5f5f02c61db5%3A0x67399dbd76fa1c12!2sIndustrial%20Area%2011%20-%20Industrial%20Area%20-%20Sharjah%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sus!4v1698246580917!5m2!1sen!2sus" 
+                src="https://maps.google.com/maps?q=Building%20W04,%20Russia%20Cluster,%20Dubai&t=m&z=15&output=embed&iwloc=near" 
                 width="100%" 
                 height="100%" 
                 style={{ border: 0 }} 
@@ -182,6 +210,12 @@ function ContactUs() {
 
         </div>
       </section>
+
+      {/* NEW: Location Highlights */}
+      <LocationHighlights />
+
+      {/* NEW: Business Hours */}
+      <BusinessHours />
     </div>
   )
 }

@@ -10,7 +10,7 @@ interface ServiceCardProps {
 
 export function ServiceCard({ title, image, imageAlt, link }: ServiceCardProps) {
   return (
-    <div className="group relative bg-white border border-gray-100 shadow-[var(--shadow-premium)] hover:shadow-[var(--shadow-premium-hover)] hover:-translate-y-2 transition-all duration-500 ease-out flex flex-col h-full reveal">
+    <div className="group relative bg-white border border-gray-100 shadow-[var(--shadow-premium)] hover:shadow-[var(--shadow-premium-hover)] hover:-translate-y-2 transition-all duration-500 ease-out flex flex-col h-full">
       {/* Image */}
       <div className="overflow-hidden relative h-56 md:h-64 bg-white">
         <img
