@@ -1,0 +1,214 @@
+import { useState, type FormEvent } from 'react'
+import { createFileRoute } from '@tanstack/react-router'
+import { Button } from '../components/ui/Button'
+import { ServiceCard } from '../components/ui/ServiceCard'
+import { AlertCircle, CheckCircle2 } from 'lucide-react'
+import { SEO } from '../components/SEO'
+import { PageHero } from '../components/PageHero'
+
+interface ContactFormData {
+  name: string;
+  email: string;
+  subject: string;
+  message?: string;
+}
+
+export const Route = createFileRoute('/services')({
+  component: Services,
+})
+
+const services = [
+  {
+    title: 'POWER TOOLS',
+    image: '/1.jpeg',
+    imageAlt: 'Professional cordless power drill representing AC/DC motor applications',
+    link: '/services/ac-dc-motor'
+  },
+  {
+    title: 'RICE COOKER',
+    image: '/7.jpeg',
+    imageAlt: 'Electric rice cooker representing power generation and heat applications',
+    link: '/services/generators'
+  },
+  {
+    title: 'BLENDER & FOOD PROCESSOR',
+    image: '/2.jpeg',
+    imageAlt: 'Food processor and blender representing high-speed rotating parts',
+    link: '/services/rotating-parts'
+  },
+  {
+    title: 'GARMENT STEAMER',
+    image: '/5.jpeg',
+    imageAlt: 'Handheld garment steamer representing water pump and fluid dynamics',
+    link: '/services/water-pumps'
+  },
+  {
+    title: 'VACUUM CLEANER',
+    image: '/6.jpeg',
+    imageAlt: 'Handheld cordless vacuum cleaner representing compressors and stators',
+    link: '/services/compressor-stator'
+  },
+  {
+    title: 'ELECTRIC JIGSAW',
+    image: '/4.jpeg',
+    imageAlt: 'Electric jigsaw tool representing precision dynamic balancing',
+    link: '/services/dynamic-balancing'
+  }
+];
+
+function Services() {
+  const [formData, setFormData] = useState<ContactFormData>({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  })
+  const [validationError, setValidationError] = useState<string | null>(null)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSuccess, setIsSuccess] = useState(false)
+
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault()
+    setValidationError(null)
+    setIsSuccess(false)
+
+    if (!formData.name.trim() || !formData.email.trim() || !formData.subject.trim()) {
+      setValidationError('Name, email, and subject are required fields.')
+      return
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!emailRegex.test(formData.email)) {
+      setValidationError('Please enter a valid email address.')
+      return
+    }
+
+    setIsSubmitting(true)
+    
+    // Simulate network request for frontend-only submission
+    setTimeout(() => {
+      setIsSubmitting(false)
+      setIsSuccess(true)
+      setFormData({ name: '', email: '', subject: '', message: '' })
+    }, 800)
+  }
+
+  return (
+    <div>
+      <SEO 
+        title="Our Services" 
+        description="Explore our comprehensive range of industrial services including AC/DC motor repair, generator maintenance, and dynamic balancing." 
+        path="/services" 
+      />
+      <PageHero
+        title="Our Services"
+        image="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2000&auto=format&fit=crop"
+        breadcrumbs={[
+          { label: 'Home', to: '/' },
+          { label: 'Services' },
+        ]}
+      />
+
+      {/* Services Grid */}
+      <section className="section-padding bg-[var(--color-bg-light)]">
+        <div className="container-custom">
+          <div className="text-center mb-12 animate-fade-in-up">
+            <span className="text-[var(--color-primary)] font-bold uppercase tracking-wider text-sm mb-2 block">What We Do?</span>
+            <h2 className="text-3xl md:text-4xl font-extrabold mb-4">OUR SERVICES OVERVIEW</h2>
+            <div className="w-20 h-1 bg-[var(--color-primary)] mx-auto mb-6"></div>
+            <p className="text-[#555555] max-w-2xl mx-auto">
+              Welcome to our comprehensive suite of electrical machinery services, where precision meets performance.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+            {services.map((service, index) => (
+              <ServiceCard 
+                key={index}
+                title={service.title}
+                image={service.image}
+                imageAlt={service.imageAlt}
+                link={service.link}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Consultation Section */}
+      <section className="section-padding bg-white relative">
+        <div className="container-custom">
+          <div className="max-w-3xl mx-auto bg-white shadow-[var(--shadow-premium-hover)] p-8 md:p-12 -mt-24 relative z-20 border-t-4 border-[var(--color-primary)] rounded-sm animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+            <div className="text-center mb-8">
+              <h2 className="text-2xl md:text-3xl font-extrabold mb-4">NEED CONSULTATION?</h2>
+              <p className="text-[#555555]">
+                Feel free to contact us and ask your question, its absolutely free.
+              </p>
+            </div>
+            
+            {isSuccess && (
+              <div className="mb-6 p-4 bg-green-50 border-l-4 border-green-500 flex items-start text-left">
+                <CheckCircle2 className="w-5 h-5 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
+                <p className="text-green-700 font-medium">Thank you! Your message has been submitted successfully.</p>
+              </div>
+            )}
+
+            {validationError && (
+              <div className="mb-6 p-4 bg-yellow-50 border-l-4 border-yellow-500 flex items-start text-left">
+                <AlertCircle className="w-5 h-5 text-yellow-600 mr-3 flex-shrink-0 mt-0.5" />
+                <p className="text-yellow-700 font-medium">{validationError}</p>
+              </div>
+            )}
+            
+            <form onSubmit={handleSubmit} className="space-y-4 text-left">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <input 
+                  type="text" 
+                  placeholder="Your Name *" 
+                  value={formData.name}
+                  onChange={(e) => setFormData({...formData, name: e.target.value})}
+                  disabled={isSubmitting}
+                  className="w-full px-4 py-3 border border-gray-300 focus:border-[var(--color-primary)] focus:outline-none transition-colors disabled:opacity-50 disabled:bg-gray-50"
+                />
+                <input 
+                  type="email" 
+                  placeholder="Your Email *" 
+                  value={formData.email}
+                  onChange={(e) => setFormData({...formData, email: e.target.value})}
+                  disabled={isSubmitting}
+                  className="w-full px-4 py-3 border border-gray-300 focus:border-[var(--color-primary)] focus:outline-none transition-colors disabled:opacity-50 disabled:bg-gray-50"
+                />
+              </div>
+              <input 
+                type="text" 
+                placeholder="Subject *" 
+                value={formData.subject}
+                onChange={(e) => setFormData({...formData, subject: e.target.value})}
+                disabled={isSubmitting}
+                className="w-full px-4 py-3 border border-gray-300 focus:border-[var(--color-primary)] focus:outline-none transition-colors disabled:opacity-50 disabled:bg-gray-50"
+              />
+              <textarea 
+                placeholder="Your Message (optional)" 
+                rows={5}
+                value={formData.message}
+                onChange={(e) => setFormData({...formData, message: e.target.value})}
+                disabled={isSubmitting}
+                className="w-full px-4 py-3 border border-gray-300 focus:border-[var(--color-primary)] focus:outline-none transition-colors resize-none disabled:opacity-50 disabled:bg-gray-50"
+              ></textarea>
+              <div className="text-center pt-4">
+                <Button 
+                  type="submit" 
+                  variant="primary" 
+                  className="w-full md:w-auto px-12"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? 'SUBMITTING...' : 'SUBMIT'}
+                </Button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </div>
+  )
+}
