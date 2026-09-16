@@ -17,6 +17,7 @@ import { Route as FaqRouteImport } from './routes/faq'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as QualityStandardsRouteImport } from './routes/quality-standards'
 import { Route as ServicesRouteImport } from './routes/services'
+import { Route as TermsAndConditionsRouteImport } from './routes/terms-and-conditions'
 import { Route as BlogPostIdRouteImport } from './routes/blog/$postId'
 import { Route as ServicesServiceIdRouteImport } from './routes/services/$serviceId'
 
@@ -60,6 +61,11 @@ const ServicesRoute = ServicesRouteImport.update({
   path: '/services',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TermsAndConditionsRoute = TermsAndConditionsRouteImport.update({
+  id: '/terms-and-conditions',
+  path: '/terms-and-conditions',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BlogPostIdRoute = BlogPostIdRouteImport.update({
   id: '/$postId',
   path: '/$postId',
@@ -80,6 +86,7 @@ export interface FileRoutesByFullPath {
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/quality-standards': typeof QualityStandardsRoute
   '/services': typeof ServicesRouteWithChildren
+  '/terms-and-conditions': typeof TermsAndConditionsRoute
   '/blog/$postId': typeof BlogPostIdRoute
   '/services/$serviceId': typeof ServicesServiceIdRoute
 }
@@ -92,6 +99,7 @@ export interface FileRoutesByTo {
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/quality-standards': typeof QualityStandardsRoute
   '/services': typeof ServicesRouteWithChildren
+  '/terms-and-conditions': typeof TermsAndConditionsRoute
   '/blog/$postId': typeof BlogPostIdRoute
   '/services/$serviceId': typeof ServicesServiceIdRoute
 }
@@ -105,6 +113,7 @@ export interface FileRoutesById {
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/quality-standards': typeof QualityStandardsRoute
   '/services': typeof ServicesRouteWithChildren
+  '/terms-and-conditions': typeof TermsAndConditionsRoute
   '/blog/$postId': typeof BlogPostIdRoute
   '/services/$serviceId': typeof ServicesServiceIdRoute
 }
@@ -119,6 +128,7 @@ export interface FileRouteTypes {
     | '/privacy-policy'
     | '/quality-standards'
     | '/services'
+    | '/terms-and-conditions'
     | '/blog/$postId'
     | '/services/$serviceId'
   fileRoutesByTo: FileRoutesByTo
@@ -131,6 +141,7 @@ export interface FileRouteTypes {
     | '/privacy-policy'
     | '/quality-standards'
     | '/services'
+    | '/terms-and-conditions'
     | '/blog/$postId'
     | '/services/$serviceId'
   id:
@@ -143,6 +154,7 @@ export interface FileRouteTypes {
     | '/privacy-policy'
     | '/quality-standards'
     | '/services'
+    | '/terms-and-conditions'
     | '/blog/$postId'
     | '/services/$serviceId'
   fileRoutesById: FileRoutesById
@@ -156,6 +168,7 @@ export interface RootRouteChildren {
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   QualityStandardsRoute: typeof QualityStandardsRoute
   ServicesRoute: typeof ServicesRouteWithChildren
+  TermsAndConditionsRoute: typeof TermsAndConditionsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -216,6 +229,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/terms-and-conditions': {
+      id: '/terms-and-conditions'
+      path: '/terms-and-conditions'
+      fullPath: '/terms-and-conditions'
+      preLoaderRoute: typeof TermsAndConditionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/blog/$postId': {
       id: '/blog/$postId'
       path: '/$postId'
@@ -264,6 +284,7 @@ const rootRouteChildren: RootRouteChildren = {
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   QualityStandardsRoute: QualityStandardsRoute,
   ServicesRoute: ServicesRouteWithChildren,
+  TermsAndConditionsRoute: TermsAndConditionsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

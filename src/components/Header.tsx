@@ -1,32 +1,10 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from '@tanstack/react-router';
-import { Menu, X, Phone, Mail, Clock, Search, MoreHorizontal } from 'lucide-react';
+import { Menu, X, Phone, Mail, Clock } from 'lucide-react';
 import { dubaiBranch } from '../data/business';
 
 export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isMoreMenuOpen, setIsMoreMenuOpen] = useState(false);
-  const moreMenuRef = useRef<HTMLDivElement>(null);
-
-  // Close more menu on click outside or ESC
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (moreMenuRef.current && !moreMenuRef.current.contains(event.target as Node)) {
-        setIsMoreMenuOpen(false);
-      }
-    };
-    
-    const handleEsc = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') setIsMoreMenuOpen(false);
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    document.addEventListener('keydown', handleEsc);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-      document.removeEventListener('keydown', handleEsc);
-    };
-  }, []);
 
   // Prevent background scrolling when mobile menu is open
   useEffect(() => {
@@ -46,7 +24,8 @@ export function Header() {
     { name: 'ABOUT', path: '/about-us' },
     { name: 'FAQ’s', path: '/faq' },
     { name: 'QUALITY & STANDARDS', path: '/quality-standards' },
-    { name: 'BLOG', path: '/blog' },
+    { name: 'T&C', path: '/terms-and-conditions' },
+    { name: 'CONTACT US', path: '/contact-us' },
   ];
 
   return (
@@ -67,11 +46,11 @@ export function Header() {
 
       <div className="container-custom relative h-[80px] lg:h-[114px]">
         {/* Top Left: Logo */}
-        <Link to="/" className="absolute left-4 top-1/2 -translate-y-1/2 lg:top-3 lg:-translate-y-0 z-20 group">
+        <Link to="/" className="absolute left-4 top-0 h-full py-1.5 z-20 group flex items-center">
           <img 
             src="/logo.png" 
             alt="Service Center Logo" 
-            className="h-16 md:h-20 lg:h-[85px] w-auto object-contain transition-transform duration-500 ease-out group-hover:scale-[1.02]" 
+            className="h-full w-auto object-contain transition-transform duration-500 ease-out group-hover:scale-[1.02]" 
           />
         </Link>
         
@@ -112,42 +91,8 @@ export function Header() {
             ))}
           </nav>
           
-          <div className="flex items-center space-x-3 xl:space-x-5 text-white ml-4 relative" ref={moreMenuRef}>
+          <div className="flex items-center space-x-3 xl:space-x-5 text-white ml-4 relative">
             
-            {/* Search Icon */}
-            <button className="relative group p-1.5 focus:outline-none focus:ring-2 focus:ring-white/50 rounded-full" aria-label="Search">
-              <Search className="w-4 h-4 xl:w-5 xl:h-5 transition-transform duration-300 group-hover:scale-110 relative z-10" />
-              <span className="absolute inset-0 bg-white/20 blur-md rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0"></span>
-            </button>
-
-            {/* Three Dot Menu Trigger */}
-            <button 
-              className="relative group p-1.5 focus:outline-none focus:ring-2 focus:ring-white/50 rounded-full" 
-              aria-label="More options"
-              onClick={() => setIsMoreMenuOpen(!isMoreMenuOpen)}
-            >
-              <MoreHorizontal className="w-5 h-5 xl:w-6 xl:h-6 transition-transform duration-300 group-hover:scale-110 relative z-10" />
-              <span className="absolute inset-0 bg-white/20 blur-md rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0"></span>
-            </button>
-
-            {/* Premium Three-Dot Dropdown */}
-            <div 
-              className={`absolute top-[120%] right-0 mt-2 w-56 bg-white/95 backdrop-blur-2xl shadow-[0_20px_40px_-15px_rgba(0,0,0,0.2)] border border-gray-200/60 rounded-2xl p-2 origin-top-right transition-all duration-200 ease-out ${
-                isMoreMenuOpen ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-95 invisible'
-              }`}
-            >
-              <Link 
-                to="/contact-us"
-                className="flex items-center space-x-3 px-4 py-3 rounded-xl hover:bg-red-50 text-gray-700 hover:text-[var(--color-primary)] transition-all duration-200 group/item focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]/50"
-                onClick={() => setIsMoreMenuOpen(false)}
-              >
-                <div className="bg-gray-100 group-hover/item:bg-red-100 p-2 rounded-lg transition-colors">
-                  <Phone className="w-4 h-4 text-gray-600 group-hover/item:text-[var(--color-primary)]" />
-                </div>
-                <span className="font-heading font-bold text-[13px] uppercase tracking-wide">Contact Us</span>
-              </Link>
-            </div>
-
             {/* Desktop Hamburger Icon */}
             <button 
               className="relative group p-1.5 focus:outline-none focus:ring-2 focus:ring-white/50 rounded-full"

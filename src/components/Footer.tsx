@@ -6,7 +6,7 @@ const quickLinks = [
   { label: 'About Us', to: '/about-us' },
   { label: "FAQ's", to: '/faq' },
   { label: 'Quality & Standards', to: '/quality-standards' },
-  { label: 'Blog', to: '/blog' },
+  { label: 'T&C', to: '/terms-and-conditions' },
   { label: 'Contact Us', to: '/contact-us' },
   { label: 'Privacy Policy', to: '/privacy-policy' },
 ];
