@@ -213,16 +213,51 @@
     @apply transition-all duration-500 ease-out;
   }
 
-  /* ----- Scroll-reveal DISABLED — content always visible ----- */
-  .reveal, .reveal-left, .reveal-group { opacity: 1 !important; transform: none !important; }
-  .reveal-group > * { transition-delay: 0ms !important; }
+  /* ----- Scroll Reveal ----- */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal-left.active {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .reveal-group > * {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  .reveal-group > *.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .reveal-group > *:nth-child(1) { transition-delay: 100ms; }
+  .reveal-group > *:nth-child(2) { transition-delay: 200ms; }
+  .reveal-group > *:nth-child(3) { transition-delay: 300ms; }
+  .reveal-group > *:nth-child(4) { transition-delay: 400ms; }
+  .reveal-group > *:nth-child(5) { transition-delay: 500ms; }
+  .reveal-group > *:nth-child(6) { transition-delay: 600ms; }
 
   /* Reduced-motion overrides */
   @media (prefers-reduced-motion: reduce) {
-    .reveal, .reveal-left {
-      opacity: 1;
-      transform: none;
-      transition: none;
+    .reveal, .reveal-left, .reveal-group > * {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
     }
 
     .premium-3d-image:hover {

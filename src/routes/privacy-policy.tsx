@@ -18,7 +18,7 @@ function PrivacyPolicy() {
       <section className="relative h-[300px] md:h-[400px] bg-[#1A1A1A] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2000&auto=format&fit=crop" 
+            src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=2000&auto=format&fit=crop" 
             alt="Privacy Policy Header" 
             className="w-full h-full object-cover opacity-30"
           />
@@ -43,7 +43,7 @@ function PrivacyPolicy() {
 
           <div className="prose prose-lg max-w-none text-[#555555]">
             <p className="mb-6 leading-relaxed">
-              At Light House Electrical Co., we respect your privacy and are committed to protecting any personal information you share with us. This policy outlines our practices regarding data collection, usage, and protection, ensuring complete compliance with the relevant data privacy regulations in the UAE.
+              At ServiceCenter.ae, we respect your privacy and are committed to protecting any personal information you share with us. This policy outlines our practices regarding data collection, usage, and protection, ensuring complete compliance with the relevant data privacy regulations in the UAE.
             </p>
 
             <h3 className="text-xl font-bold text-[#1A1A1A] mt-8 mb-4 uppercase">Information We Collect</h3>

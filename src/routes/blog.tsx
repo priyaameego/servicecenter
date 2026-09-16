@@ -20,7 +20,7 @@ function Blog() {
       />
       <PageHero
         title="Blog"
-        image="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2000&auto=format&fit=crop"
+        image="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=2000&auto=format&fit=crop"
         breadcrumbs={[
           { label: 'Home', to: '/' },
           { label: 'Blog' },

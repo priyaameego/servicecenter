@@ -6,20 +6,20 @@ const slides = [
   {
     id: 1,
     image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2000&auto=format&fit=crop",
-    title: "Precision Expertise in Electrical Machinery",
-    subtitle: "Rewinding, Repair, Maintenance, and Dynamic Balancing of AC & DC Motors, Generators, and Rotating Parts for Optimal Operational Performance."
+    title: "BLACK+DECKER SERVICE CENTER",
+    subtitle: "Professional Repair, Maintenance & After-Sales Support for a wide range of Black+Decker home and kitchen appliances."
   },
   {
     id: 2,
     image: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?q=80&w=2000&auto=format&fit=crop",
-    title: "Authorized Service Center",
-    subtitle: "We are an authorized service center and spare parts provider for top brands including Stanley, Black+Decker, and DeWalt."
+    title: "BLACK+DECKER DEDICATED SUPPORT",
+    subtitle: "We provide expert warranty inspection, genuine spare parts, and dedicated out-of-warranty support for your appliances."
   },
   {
     id: 3,
     image: "https://images.unsplash.com/photo-1542013936693-884638332954?q=80&w=2000&auto=format&fit=crop",
-    title: "Quality Only Happens When You Care",
-    subtitle: "Committed to providing industry with a premium standard of excellence and safety."
+    title: "MORE THAN A REPAIR",
+    subtitle: "Our objective is not simply to fix a fault. We aim to help extend the useful life of your Black+Decker appliance. Your Black+Decker appliance deserves expert care."
   }
 ];
 

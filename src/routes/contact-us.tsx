@@ -65,7 +65,7 @@ function ContactUs() {
       />
       <PageHero
         title="Contact Us"
-        image="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2000&auto=format&fit=crop"
+        image="https://images.unsplash.com/photo-1516387938699-a93567ec168e?q=80&w=2000&auto=format&fit=crop"
         breadcrumbs={[
           { label: 'Home', to: '/' },
           { label: 'Contact Us' },

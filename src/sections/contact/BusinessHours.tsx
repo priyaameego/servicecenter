@@ -20,12 +20,8 @@ export function BusinessHours() {
               
               <div className="space-y-4 mb-8">
                 <div className="flex justify-between items-center py-3 border-b border-gray-800">
-                  <span className="font-semibold text-gray-300">Monday - Friday</span>
-                  <span className="font-bold text-white">08:00 AM - 06:00 PM</span>
-                </div>
-                <div className="flex justify-between items-center py-3 border-b border-gray-800">
-                  <span className="font-semibold text-gray-300">Saturday</span>
-                  <span className="font-bold text-white">08:00 AM - 02:00 PM</span>
+                  <span className="font-semibold text-gray-300">Monday - Saturday</span>
+                  <span className="font-bold text-white">09:00 AM - 07:00 PM</span>
                 </div>
                 <div className="flex justify-between items-center py-3 border-b border-gray-800">
                   <span className="font-semibold text-[var(--color-primary)]">Sunday</span>

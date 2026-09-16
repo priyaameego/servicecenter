@@ -43,7 +43,7 @@ function TermsAndConditions() {
 
           <div className="prose prose-lg max-w-none text-[#555555]">
             <p className="mb-6 leading-relaxed">
-              Welcome to Light House Electrical Co. By accessing our website and utilizing our services, you agree to comply with and be bound by the following terms and conditions of use.
+              Welcome to ServiceCenter.ae. By accessing our website and utilizing our services, you agree to comply with and be bound by the following terms and conditions of use.
             </p>
 
             <h3 className="text-xl font-bold text-[#1A1A1A] mt-8 mb-4 uppercase">Service Agreement</h3>
@@ -58,7 +58,7 @@ function TermsAndConditions() {
 
             <h3 className="text-xl font-bold text-[#1A1A1A] mt-8 mb-4 uppercase">Limitation of Liability</h3>
             <p className="mb-6 leading-relaxed">
-              In no case shall Light House Electrical Co., our directors, officers, employees, affiliates, agents, contractors, interns, suppliers, service providers or licensors be liable for any injury, loss, claim, or any direct, indirect, incidental, punitive, special, or consequential damages of any kind.
+              In no case shall ServiceCenter.ae, our directors, officers, employees, affiliates, agents, contractors, interns, suppliers, service providers or licensors be liable for any injury, loss, claim, or any direct, indirect, incidental, punitive, special, or consequential damages of any kind.
             </p>
           </div>
         </div>

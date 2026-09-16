@@ -3,23 +3,23 @@ import { MapPin, Search, Wrench, CheckCircle } from 'lucide-react';
 const steps = [
   {
     icon: MapPin,
-    title: 'Drop-off / Collection',
-    description: 'Bring your tool to our Dubai service center or arrange a pickup for large equipment.',
+    title: 'Bring Your Appliance',
+    description: 'Drop off your Black+Decker appliance at our dedicated service center.',
   },
   {
     icon: Search,
-    title: 'Expert Diagnostics',
-    description: 'We perform a thorough inspection and provide a detailed repair quotation before starting.',
+    title: 'Product Inspection & Diagnosis',
+    description: 'We perform a thorough product inspection and diagnosis to identify the required repair.',
   },
   {
     icon: Wrench,
-    title: 'Precision Repair',
-    description: 'Our certified technicians restore your equipment using 100% genuine OEM spare parts.',
+    title: 'Repair & Parts Replacement',
+    description: 'Upon repair approval, we perform the repair and replace parts as needed.',
   },
   {
     icon: CheckCircle,
-    title: 'Quality Testing',
-    description: 'Rigorous electrical and performance testing ensures your tool is safe and ready for work.',
+    title: 'Testing & Quality Check',
+    description: 'Every serviced appliance undergoes functional testing before it is released to the customer and ready for collection.',
   },
 ];
 

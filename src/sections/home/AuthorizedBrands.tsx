@@ -13,9 +13,7 @@ export function AuthorizedBrands() {
 
         <div className="flex flex-wrap justify-center items-center gap-10 md:gap-16 reveal">
           {[
-            { name: 'STANLEY', color: '#FFD100' },
             { name: 'BLACK+DECKER', color: '#FF6A00' },
-            { name: 'DeWALT', color: '#F2C000' },
           ].map(({ name, color }) => (
             <div
               key={name}

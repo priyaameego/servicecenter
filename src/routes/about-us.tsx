@@ -21,7 +21,7 @@ function AboutUs() {
       />
       <PageHero
         title="About Us"
-        image="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2000&auto=format&fit=crop"
+        image="https://images.unsplash.com/photo-1574169208507-84376144848b?q=80&w=2000&auto=format&fit=crop"
         breadcrumbs={[
           { label: 'Home', to: '/' },
           { label: 'About Us' },
@@ -38,10 +38,10 @@ function AboutUs() {
               <div className="w-20 h-1 bg-[var(--color-primary)] mb-6"></div>
               
               <p className="text-[#555555] mb-6 leading-relaxed">
-                ServiceCenter.ae is a premier Authorized Service Center located in Dubai, committed to providing a premium standard of excellence in the repair and maintenance of power tools, home appliances, and specialized equipment. We are an authorized partner for world-leading brands including Stanley, Black+Decker, and DeWalt, delivering precision solutions for both professionals and homeowners.
+                ServiceCenter.ae is a dedicated Black+Decker Service Center located in Dubai, committed to providing a premium standard of excellence in the repair, maintenance, and after-sales support of Black+Decker home and kitchen appliances. We deliver professional appliance servicing, warranty support, out-of-warranty repairs, and genuine spare parts to ensure the highest level of customer satisfaction.
               </p>
               <p className="text-[#555555] leading-relaxed">
-                Our workshop is fully equipped with advanced diagnostic tools and staffed by factory-trained technicians who adhere strictly to manufacturer standards. We prioritize safety, efficiency, and the use of genuine spare parts, ensuring that every piece of equipment we service is returned to peak operational performance.
+                Our workshop is fully equipped with advanced diagnostic tools and staffed by experienced technicians who adhere strictly to manufacturer standards. We prioritize safety, efficiency, and customer-focused service, ensuring that every Black+Decker appliance we service is returned to optimal performance.
               </p>
             </div>
             
@@ -66,7 +66,7 @@ function AboutUs() {
               <Target className="w-16 h-16 text-[var(--color-primary)] mb-6 transition-transform duration-500 group-hover:scale-110" />
               <h3 className="text-2xl font-extrabold mb-4 uppercase" style={{ fontFamily: 'var(--font-heading)' }}>OUR MISSION</h3>
               <p className="text-[#555555] leading-relaxed">
-                To provide unparalleled quality and dependable service for power tools and appliances. We strive to exceed customer expectations by delivering rapid, precision repairs, genuine parts, and expert technical support that keeps our clients' equipment running flawlessly.
+                To provide unparalleled quality and dependable service for Black+Decker appliances. We strive to exceed customer expectations by delivering rapid, precision repairs, genuine parts, and expert technical support that keeps our clients' home and kitchen equipment running flawlessly.
               </p>
             </div>
             
@@ -74,7 +74,7 @@ function AboutUs() {
               <Eye className="w-16 h-16 text-[#1A1A1A] mb-6 transition-transform duration-500 group-hover:scale-110" />
               <h3 className="text-2xl font-extrabold mb-4 uppercase" style={{ fontFamily: 'var(--font-heading)' }}>OUR VISION</h3>
               <p className="text-[#555555] leading-relaxed">
-                To be the most trusted and comprehensive authorized service center in the UAE, recognized for our commitment to technical excellence, outstanding customer care, and being the definitive destination for authentic equipment repair.
+                To be the most trusted and comprehensive Black+Decker service center in the UAE, recognized for our commitment to technical excellence, outstanding customer care, and being the definitive destination for authentic appliance repair and maintenance.
               </p>
             </div>
           </div>

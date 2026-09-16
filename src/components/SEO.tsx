@@ -10,7 +10,7 @@ const SITE_URL = 'https://servicecenter.ae';
 
 export function SEO({ title, description, path }: SEOProps) {
   // Ensure title suffix is consistent
-  const fullTitle = `${title} | Light House Electrical Co. (ServiceCenter.ae)`;
+  const fullTitle = `${title} | ServiceCenter.ae`;
   
   // Format the canonical URL properly
   const canonicalUrl = `${SITE_URL}${path.startsWith('/') ? path : `/${path}`}`;

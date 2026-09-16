@@ -12,12 +12,12 @@ const quickLinks = [
 ];
 
 const serviceLinks = [
-  { label: 'AC & DC Motor Repair', to: '/services/ac-dc-motor' },
-  { label: 'Generator Maintenance', to: '/services/generators' },
-  { label: 'Water Pump Service', to: '/services/water-pumps' },
-  { label: 'Compressor & Stator', to: '/services/compressor-stator' },
-  { label: 'Dynamic Balancing', to: '/services/dynamic-balancing' },
-  { label: 'Power Tool Repair', to: '/services/ac-dc-motor' },
+  { label: 'Power Tools', to: '/services/power-tools' },
+  { label: 'Rice Cooker', to: '/services/rice-cooker' },
+  { label: 'Blender & Food Processor', to: '/services/blender-food-processor' },
+  { label: 'Garment Steamer', to: '/services/garment-steamer' },
+  { label: 'Vacuum Cleaner', to: '/services/vacuum-cleaner' },
+  { label: 'Electric Jigsaw', to: '/services/electric-jigsaw' },
 ];
 
 export function Footer() {
@@ -65,7 +65,7 @@ export function Footer() {
             </div>
 
             <p className="text-gray-400 leading-relaxed text-sm mb-6">
-              Dubai's premier authorized service center for <span className="text-white font-semibold">AC/DC motors</span>, generators, water pumps, and precision electromechanical machinery repair.
+              Dubai's dedicated <span className="text-white font-semibold">Black+Decker</span> service center for professional home and kitchen appliance repair, maintenance, and after-sales support.
             </p>
 
             {/* Feature pills */}
@@ -85,7 +85,7 @@ export function Footer() {
             {/* Working hours badge */}
             <div className="flex items-center gap-2 text-xs text-gray-500">
               <Clock className="w-4 h-4 text-[var(--color-primary)]" />
-              <span>Mon – Sat &nbsp;|&nbsp; <strong className="text-gray-300">8:00 AM – 6:00 PM</strong></span>
+              <span>Mon – Sat &nbsp;|&nbsp; <strong className="text-gray-300">9:00 AM – 7:00 PM</strong></span>
             </div>
           </div>
 

@@ -28,12 +28,12 @@ export function TestingFacility() {
           </div>
 
           <div className="w-full lg:w-1/2 reveal" style={{ transitionDelay: '0.2s' }}>
-            <span className="section-eyebrow">State-of-the-art Diagnostics</span>
-            <h2 className="section-title">ADVANCED TESTING FACILITY</h2>
+            <span className="section-eyebrow">Professional Diagnosis</span>
+            <h2 className="section-title">ADVANCED TESTING</h2>
             <div className="section-divider-left mt-2 mb-6" />
             
             <p className="text-[#555555] mb-8 leading-relaxed">
-              We don't just repair; we verify. Our Dubai workshop is equipped with the latest diagnostic software and load-testing equipment approved by top manufacturers. Every repaired tool undergoes rigorous testing before it leaves our facility.
+              We don't just repair; we verify. Our workshop is equipped with diagnostic tools to inspect and repair your Black+Decker appliances. Every repaired appliance undergoes rigorous functional testing before it is ready for collection.
             </p>
             
             <div className="space-y-6">
@@ -42,8 +42,8 @@ export function TestingFacility() {
                   <Activity className="w-6 h-6 text-[var(--color-primary)]" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-[#111111] uppercase tracking-wide mb-1">Electrical Safety Profiling</h4>
-                  <p className="text-sm text-gray-500 leading-relaxed">Ensuring no short circuits, proper grounding, and battery health management.</p>
+                  <h4 className="font-bold text-[#111111] uppercase tracking-wide mb-1">Electrical Safety Check</h4>
+                  <p className="text-sm text-gray-500 leading-relaxed">Ensuring no short circuits, proper grounding, and safe operation.</p>
                 </div>
               </div>
               
@@ -52,8 +52,8 @@ export function TestingFacility() {
                   <Gauge className="w-6 h-6 text-[var(--color-primary)]" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-[#111111] uppercase tracking-wide mb-1">Load & RPM Verification</h4>
-                  <p className="text-sm text-gray-500 leading-relaxed">Testing motors under actual working loads to guarantee OEM performance standards.</p>
+                  <h4 className="font-bold text-[#111111] uppercase tracking-wide mb-1">Functional Verification</h4>
+                  <p className="text-sm text-gray-500 leading-relaxed">Testing appliances to ensure proper heating, motor function, or general performance.</p>
                 </div>
               </div>
             </div>

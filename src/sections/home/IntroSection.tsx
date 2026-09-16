@@ -27,14 +27,14 @@ export function IntroSection() {
           {/* Text Side */}
           <div className="w-full lg:w-1/2 reveal">
             <span className="section-eyebrow">Our Expertise</span>
-            <h2 className="section-title">WHAT WE DO?</h2>
+            <h2 className="section-title">WHAT WE DO</h2>
             <div className="section-divider mb-7" />
 
             <p className="text-[#555555] mb-5 leading-[1.85]">
-              Precision expertise in the rewinding, repair, maintenance, and dynamic balancing of AC &amp; DC motors, generators, rotating parts, water pumps, compressors, and stators for optimal operational performance.
+              At our Black+Decker Service Center, we provide professional repair, maintenance, and after-sales support for a wide range of Black+Decker home and kitchen appliances. Our service center is equipped with dedicated repair facilities, diagnostic tools, and experienced technicians to ensure every appliance is inspected carefully and serviced to the required standards.
             </p>
             <p className="text-[#555555] mb-8 leading-[1.85]">
-              ServiceCenter.ae is a specialized industrial service center dedicated to keeping your critical electromechanical equipment running smoothly. We provide comprehensive inspection, repair, and preventive maintenance solutions tailored for heavy machinery and industrial applications.
+              We diagnose and repair a wide range of Black+Decker home and kitchen appliances, from everyday kitchen essentials to cleaning and home-comfort products. Our services include troubleshooting, component replacement, electrical repairs, preventive maintenance, performance testing, and general servicing.
             </p>
 
             <Button to="/about-us" variant="secondary">READ MORE ABOUT US</Button>

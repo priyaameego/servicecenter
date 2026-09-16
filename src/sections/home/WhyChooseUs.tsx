@@ -4,23 +4,23 @@ export function WhyChooseUs() {
   const features = [
     {
       icon: ShieldCheck,
-      title: 'GENUINE PARTS',
-      description: 'We exclusively use 100% authentic OEM spare parts to ensure the safety, performance, and longevity of your equipment.',
+      title: 'GENUINE SPARE PARTS',
+      description: 'We use genuine Black+Decker spare parts, subject to availability and the applicable service requirements, helping maintain the performance, reliability, and safety of your appliance.',
     },
     {
       icon: Award,
-      title: 'CERTIFIED EXPERTS',
-      description: 'Our technicians are factory-trained and certified by leading brands like DeWalt and Stanley for precision repairs.',
+      title: 'WARRANTY SUPPORT',
+      description: 'For eligible Black+Decker products, our team provides warranty inspection and service in accordance with the applicable warranty terms and conditions. Simply bring your appliance along with the required proof of purchase, and our service team will guide you through the process.',
     },
     {
       icon: Clock,
-      title: 'FAST TURNAROUND',
-      description: 'Minimize downtime with our efficient diagnostic processes and fully-stocked inventory of critical replacement parts.',
+      title: 'OUT-OF-WARRANTY REPAIRS',
+      description: 'We also support Black+Decker appliances that are outside their warranty period. Our technicians inspect the product, identify the issue, and provide the appropriate repair solution based on the condition of the appliance and availability of spare parts.',
     },
     {
       icon: Settings,
-      title: 'WARRANTY SECURE',
-      description: 'As an authorized center, our repairs maintain your manufacturer warranty, providing complete peace of mind.',
+      title: 'MORE THAN A REPAIR',
+      description: 'Our objective is not simply to fix a fault. We aim to help extend the useful life of your Black+Decker appliance through proper diagnosis, professional workmanship, appropriate spare parts, and dependable after-sales support. Your Black+Decker appliance deserves expert care.',
     },
   ];
 

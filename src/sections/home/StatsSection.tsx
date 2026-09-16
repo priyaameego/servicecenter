@@ -1,57 +1,63 @@
-import { Wrench, CheckCircle, Clock } from 'lucide-react';
-
-const stats = [
-  { icon: Wrench,       number: '1250+', label: 'Projects Completed' },
-  { icon: CheckCircle,  number: '100%',  label: 'Quality Guaranteed'  },
-  { icon: Clock,        number: '24/7',  label: 'Support Available'   },
-];
-
 export function StatsSection() {
   return (
-    <section className="section-padding bg-[#111111] text-white relative overflow-hidden">
+    <section className="py-20 relative overflow-hidden bg-[#f8f8f8]">
       {/* Background image overlay */}
-      <div className="absolute inset-0 opacity-[0.07]">
+      <div className="absolute inset-0 z-0">
         <div
-          className="absolute inset-0 bg-cover bg-center bg-fixed"
-          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2000&auto=format&fit=crop')" }}
+          className="absolute inset-0 bg-cover bg-center bg-fixed opacity-20 grayscale"
+          style={{ backgroundImage: "url('/3.jpeg')" }}
         />
+        <div className="absolute inset-0 bg-black/40" />
       </div>
-      {/* Orange glow blob */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[var(--color-primary)] opacity-[0.04] blur-3xl rounded-full pointer-events-none" />
 
-      <div className="container-custom relative z-10">
-        {/* Header */}
-        <div className="text-center mb-16 reveal">
-          <span className="section-eyebrow">Our Achievements</span>
-          <h2 className="text-3xl md:text-4xl font-heading font-extrabold text-white uppercase tracking-tight mb-3">
-            WHAT WE'VE DONE?
-          </h2>
-          <div className="section-divider-center" />
-        </div>
+      <div className="container-custom relative z-10 max-w-6xl">
+        <div className="bg-white flex flex-col md:flex-row shadow-2xl reveal">
+          
+          {/* Left Block (Orange/Primary) */}
+          <div className="bg-[var(--color-primary)] text-white p-12 md:w-1/3 flex flex-col justify-center items-center text-center">
+            <span className="uppercase tracking-widest text-sm mb-2 font-medium">Stats</span>
+            <h2 className="text-4xl md:text-5xl font-heading font-extrabold uppercase leading-tight">
+              What<br />We<br />Done?
+            </h2>
+          </div>
 
-        {/* Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-0 reveal-group">
-          {stats.map(({ icon: Icon, number, label }, i) => (
-            <div
-              key={i}
-              className={`reveal flex flex-col items-center text-center px-8 py-10 group
-                hover:-translate-y-1 transition-transform duration-300
-                ${i < stats.length - 1 ? 'md:border-r md:border-white/10 border-b md:border-b-0 border-white/10' : ''}
-              `}
-            >
-              <div className="w-16 h-16 bg-white/5 border border-white/10 flex items-center justify-center mb-6 group-hover:bg-[var(--color-primary)]/10 group-hover:border-[var(--color-primary)]/30 transition-all duration-500">
-                <Icon className="w-8 h-8 text-[var(--color-primary)]" />
+          {/* Right Block (Stats) */}
+          <div className="p-12 md:w-2/3 flex flex-col justify-center">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center text-center">
+              
+              {/* Stat 1 */}
+              <div className="flex flex-col items-center">
+                <div className="text-6xl md:text-7xl font-light text-[#111111] leading-none mb-2">
+                  1,500
+                </div>
+                <div className="text-4xl font-light text-[var(--color-primary)]">
+                  +
+                </div>
               </div>
-              <div className="text-5xl md:text-6xl font-heading font-extrabold text-white mb-2 leading-none tracking-tight">
-                {number}
+
+              {/* Stat 2 */}
+              <div className="flex flex-col items-center">
+                <div className="text-5xl md:text-6xl font-light text-[#111111] leading-none mb-3">
+                  30<span className="text-4xl text-[#111111]">+</span>
+                </div>
+                <div className="text-sm font-semibold text-gray-400 uppercase tracking-widest">
+                  Team
+                </div>
               </div>
-              {/* Animated underline */}
-              <div className="w-8 h-[2px] bg-[var(--color-primary)] mx-auto mb-3 origin-left" />
-              <div className="text-gray-400 font-bold uppercase tracking-[0.18em] text-xs">
-                {label}
+
+              {/* Stat 3 */}
+              <div className="flex flex-col items-center">
+                <div className="text-5xl md:text-6xl font-light text-[#111111] leading-none mb-3">
+                  10<span className="text-4xl text-[var(--color-primary)]">+</span>
+                </div>
+                <div className="text-sm font-semibold text-gray-400 uppercase tracking-widest">
+                  Services
+                </div>
               </div>
+
             </div>
-          ))}
+          </div>
+
         </div>
       </div>
     </section>

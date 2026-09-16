@@ -2,9 +2,7 @@ import { useState } from 'react';
 import { createFileRoute } from '@tanstack/react-router'
 import { SEO } from '../components/SEO'
 import { PageHero } from '../components/PageHero'
-import { Plus, Minus } from 'lucide-react'
-import { StillHaveQuestions } from '../sections/faq/StillHaveQuestions'
-import { EmergencyBanner } from '../sections/faq/EmergencyBanner'
+import { Plus, Minus, CheckCircle2 } from 'lucide-react'
 
 export const Route = createFileRoute('/faq')({
   component: FAQ,
@@ -12,77 +10,48 @@ export const Route = createFileRoute('/faq')({
 
 const faqCategories = [
   {
-    category: 'General Questions',
+    category: 'General Service Questions',
     faqs: [
       {
-        question: 'What types of equipment do you repair and service?',
-        answer: 'We specialize in the repair, maintenance, and diagnostics of power tools, home appliances, and electrical equipment. As an authorized service center, we handle everything from power drills and saws to blenders, vacuum cleaners, and pressure washers.',
+        question: 'What Black+Decker products do you service?',
+        answer: 'We provide service for a wide range of Black+Decker home, kitchen, garment-care, cleaning and selected home-comfort appliances, subject to model, condition and parts availability.',
       },
       {
-        question: 'Are you an authorized service center?',
-        answer: 'Yes. ServiceCenter.ae is a fully authorized service center and genuine spare parts provider for top international brands including Stanley, Black+Decker, and DeWalt. Our technicians are factory-trained and certified.',
+        question: 'What happens when I bring my appliance for repair?',
+        answer: 'The appliance is inspected and diagnosed first. After diagnosis, the required repair is discussed and, where applicable, approved before repair and parts replacement. The appliance is then tested before collection.',
       },
       {
-        question: 'Where are you located?',
-        answer: 'We are located at Building W04, Shop 08, Al Warsan Street, Russia Cluster, Dubai International City, Dubai — UAE. You can also reach us via Toll Free: 800 2527 or at Support@servicenter.ae.',
+        question: 'Do you service Black+Decker kitchen appliances?',
+        answer: 'Yes. Service capabilities include selected Black+Decker kitchen appliances such as blenders, mixers, grinders, choppers, juicers, food processors, air fryers, kettles, toasters, coffee makers and rice cookers, subject to model and serviceability.',
       },
       {
-        question: 'What are your working hours?',
-        answer: 'Our service center is open Monday to Saturday from 8:00 AM to 6:00 PM. For urgent queries, you can reach us via our toll-free number or email at any time.',
-      },
-      {
-        question: 'How long does repair usually take?',
-        answer: 'Repair times vary based on the complexity of the issue and parts availability. Standard diagnostics and minor repairs are often completed within 24-48 hours. If specialized OEM parts need to be ordered, we will provide you with a clear timeline and cost estimate upfront.',
+        question: 'Do you service Black+Decker vacuum cleaners?',
+        answer: 'Yes, selected Black+Decker vacuum and floor-care appliances can be serviced depending on the model, condition and spare-parts availability.',
       },
     ],
   },
   {
-    category: 'Services & Technical',
+    category: 'Warranty & Parts',
     faqs: [
       {
-        question: 'Do you service DeWalt, Stanley, and Black+Decker tools?',
-        answer: 'Absolutely. We are an authorized service partner for DeWalt, Stanley, and Black+Decker. We have direct access to their diagnostic software, schematics, and genuine replacement parts to ensure your tools are serviced to exact manufacturer specifications.',
+        question: 'Do you provide Black+Decker warranty service?',
+        answer: 'For eligible Black+Decker products, warranty inspection and service are provided according to the applicable warranty terms and conditions.',
       },
       {
-        question: 'How does the repair process work?',
-        answer: 'Bring your tool or appliance to our Dubai service center. Our technicians will perform a comprehensive diagnostic inspection to identify the fault. We then provide you with a detailed repair quotation. Once approved, we proceed with the repair using genuine parts, followed by rigorous testing before returning the equipment to you.',
+        question: 'Do you repair Black+Decker appliances outside warranty?',
+        answer: 'Yes. Out-of-warranty Black+Decker appliances can be inspected and serviced, subject to product condition and availability of suitable spare parts.',
       },
       {
-        question: 'Do you provide warranty service?',
-        answer: 'Yes, we handle in-warranty repairs for our authorized brands (Stanley, Black+Decker, DeWalt) provided you have valid proof of purchase and the issue is covered under the manufacturer\'s warranty terms.',
+        question: 'Do you use genuine Black+Decker spare parts?',
+        answer: 'Genuine Black+Decker spare parts are used where available and appropriate for the applicable service requirement.',
       },
       {
-        question: 'Can I get genuine spare parts from you?',
-        answer: 'Yes. We stock a comprehensive inventory of genuine OEM spare parts, including batteries, chargers, switches, motors, and casing components. Using genuine parts ensures the longevity and safety of your equipment.',
-      },
-      {
-        question: 'What should I do if my power tool stops working?',
-        answer: 'First, check for obvious issues like a depleted battery, tripped circuit breaker, or damaged power cord. If the tool still doesn\'t operate, do not attempt to open or modify the tool yourself, as this can void your warranty and pose a safety risk. Bring it to our service center for professional diagnosis.',
-      },
-      {
-        question: 'Do you provide maintenance services?',
-        answer: 'Yes. Routine maintenance is crucial for professional equipment. We offer cleaning, lubrication, brush replacement, and calibration services to keep your tools operating at peak efficiency and prevent unexpected breakdowns.',
+        question: 'What should I bring for warranty service?',
+        answer: 'Bring the appliance and the required proof of purchase. Our service team will guide you through the applicable warranty process.',
       },
     ],
   },
-  {
-    category: 'Quality & Warranty',
-    faqs: [
-      {
-        question: 'Do you offer a warranty on repairs?',
-        answer: 'Yes. We stand by the quality of our work. We offer a standard warranty on all out-of-warranty repair services and the replacement parts we install. If the same issue reoccurs within the warranty period, we will address it promptly.',
-      },
-      {
-        question: 'Are your technicians certified?',
-        answer: 'Yes. Our technical team undergoes rigorous and continuous training directly from the manufacturers (including Stanley, Black+Decker, and DeWalt) to stay updated on the latest tool technologies, repair protocols, and safety standards.',
-      },
-      {
-        question: 'Do you use genuine parts?',
-        answer: 'Yes, exclusively. We use only high-quality genuine parts in all our repairs to ensure performance, safety, and compliance with manufacturer standards.',
-      },
-    ],
-  },
-]
+];
 
 function AccordionItem({ question, answer, index }: { question: string; answer: string; index: number }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -143,6 +112,23 @@ function AccordionItem({ question, answer, index }: { question: string; answer: 
 }
 
 function FAQ() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    setIsSubmitting(true);
+    // Simulate network request
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setIsSuccess(true);
+      form.reset(); // Clear the form data
+      // Reset after 3 seconds
+      setTimeout(() => setIsSuccess(false), 3000);
+    }, 800);
+  };
+
   return (
     <div className="flex flex-col w-full overflow-hidden">
       <SEO
@@ -152,61 +138,155 @@ function FAQ() {
       />
       <PageHero
         title="FAQ's"
-        image="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2000&auto=format&fit=crop"
+        image="https://images.unsplash.com/photo-1521791055366-0d553872125f?q=80&w=2000&auto=format&fit=crop"
         breadcrumbs={[
           { label: 'Home', to: '/' },
           { label: "FAQ's" },
         ]}
       />
 
-      {/* Intro */}
-      <section className="section-padding bg-[var(--color-bg-light)]">
-        <div className="container-custom max-w-5xl">
+      {/* Main FAQ Layout */}
+      <section className="section-padding bg-white">
+        <div className="container-custom max-w-6xl">
+          
+          {/* TOP ROW: Title & Features + Image */}
+          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20 mb-20 reveal">
+            
+            {/* Left Content */}
+            <div className="flex-1">
+              <div className="w-10 h-6 bg-[var(--color-primary)] mb-6 transform -skew-x-12" />
+              <span className="text-gray-500 uppercase tracking-widest text-sm mb-2 block font-semibold">
+                FEEL FREE TO ASK US
+              </span>
+              <h2 className="text-4xl md:text-5xl font-heading font-extrabold text-[#111111] uppercase leading-tight mb-10">
+                FREQUENTLY ASKED QUESTIONS
+              </h2>
+              
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                {['Quality', 'Accuracy', 'Safety', 'Reliance'].map((item) => (
+                  <div key={item} className="flex items-center gap-2">
+                    <div className="w-5 h-5 rounded-full border-2 border-[var(--color-primary)] text-[var(--color-primary)] flex items-center justify-center flex-shrink-0">
+                      <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <span className="font-bold text-sm text-[#111111]">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
 
-          <div className="text-center mb-14">
-            <span className="section-eyebrow">Got Questions?</span>
-            <h2 className="section-title">FREQUENTLY ASKED QUESTIONS</h2>
-            <div className="section-divider-center mb-5" />
-            <p className="text-[#555555] max-w-2xl mx-auto text-sm leading-[1.85]">
-              Find answers to the most common questions about our services, repair process, quality standards, and certifications. Can't find what you're looking for? Contact us directly.
-            </p>
+            {/* Right Image */}
+            <div className="w-full lg:w-[450px] relative">
+              {/* Black offset block */}
+              <div className="absolute -bottom-8 -right-8 w-full h-full bg-[#1A1A1A] z-0 hidden md:block" />
+              
+              {/* Image with red border */}
+              <div className="relative z-10 border-4 border-[var(--color-primary)]">
+                <img 
+                  src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=800&auto=format&fit=crop" 
+                  alt="Appliance Repair Setup" 
+                  className="w-full h-[300px] object-cover"
+                />
+              </div>
+            </div>
           </div>
 
-          {/* FAQ Categories */}
-          <div className="space-y-10">
-            {faqCategories.map((cat) => (
-              <div key={cat.category}>
-                {/* Category heading */}
-                <div className="flex items-center gap-4 mb-5">
-                  <span className="w-1 h-8 bg-[var(--color-primary)] flex-shrink-0" />
-                  <h3
-                    className="text-xl font-bold text-[#111111] uppercase tracking-wide"
-                    style={{ fontFamily: 'var(--font-heading)' }}
-                  >
-                    {cat.category}
-                  </h3>
-                  <div className="flex-1 h-px bg-gray-200" />
-                </div>
 
-                {/* Accordion block */}
-                <div className="bg-white border border-gray-100 shadow-[var(--shadow-premium)] divide-y divide-gray-100">
-                  {cat.faqs.map((faq, i) => (
-                    <AccordionItem key={i} question={faq.question} answer={faq.answer} index={i} />
-                  ))}
+          {/* BOTTOM ROW: FAQ Accordion + Contact Form */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start reveal-group">
+            
+            {/* Left Column: FAQs */}
+            <div>
+              {/* Header block */}
+              <div className="flex items-center gap-6 mb-10">
+                <div className="w-20 h-20 bg-[var(--color-primary)] flex items-center justify-center flex-shrink-0">
+                  <svg className="w-10 h-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a8.96 8.96 0 01-3 0M14.25 18v-.192c0-.983.658-1.82 1.508-2.316a7.5 7.5 0 10-7.516 0c.85.496 1.508 1.333 1.508 2.316V18" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold font-heading uppercase text-[#111111] leading-none mb-2">
+                    GENERAL QUESTIONS
+                  </h3>
+                  <p className="text-gray-500 text-sm">Frequently asked questions</p>
                 </div>
               </div>
-            ))}
+
+              {/* Accordions */}
+              <div className="space-y-8">
+                {faqCategories.map((cat) => (
+                  <div key={cat.category}>
+                    <h4 className="text-sm font-bold text-[var(--color-primary)] uppercase tracking-wider mb-4 border-b border-gray-200 pb-2">
+                      {cat.category}
+                    </h4>
+                    <div className="border border-gray-100 bg-white">
+                      {cat.faqs.map((faq, i) => (
+                        <AccordionItem key={i} question={faq.question} answer={faq.answer} index={i} />
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right Column: Contact Form */}
+            <div className="bg-white p-8 md:p-10 border border-gray-100 shadow-[var(--shadow-premium)] relative group">
+              {/* Top border hover effect */}
+              <div className="absolute top-0 left-0 w-full h-1 bg-[var(--color-primary)] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+              
+              {/* Header block */}
+              <div className="flex items-center gap-6 mb-8">
+                <div className="w-16 h-16 bg-[var(--color-primary)]/10 flex items-center justify-center flex-shrink-0 border border-[var(--color-primary)]/20 rounded-full group-hover:bg-[var(--color-primary)] transition-colors duration-500">
+                  <svg className="w-8 h-8 text-[var(--color-primary)] group-hover:text-white transition-colors duration-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold font-heading uppercase text-[#111111] leading-none mb-2">
+                    Ask Us
+                  </h3>
+                  <p className="text-gray-500 text-sm">Quick contact form</p>
+                </div>
+              </div>
+
+              {isSuccess && (
+                <div className="mb-6 p-4 bg-green-50 border-l-4 border-green-500 flex items-start text-left animate-in fade-in slide-in-from-top-2">
+                  <CheckCircle2 className="w-5 h-5 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
+                  <p className="text-green-700 font-medium text-sm">Message sent successfully! We'll reply shortly.</p>
+                </div>
+              )}
+
+              {/* Form */}
+              <form className="space-y-4" onSubmit={handleSubmit}>
+                <div>
+                  <label className="block text-gray-800 text-xs uppercase tracking-wider mb-2 font-bold">Your name</label>
+                  <input required type="text" disabled={isSubmitting} className="w-full bg-gray-50 border border-gray-200 p-3 text-sm outline-none focus:border-[var(--color-primary)] focus:bg-white transition-all disabled:opacity-50" />
+                </div>
+                <div>
+                  <label className="block text-gray-800 text-xs uppercase tracking-wider mb-2 font-bold">Your email</label>
+                  <input required type="email" disabled={isSubmitting} className="w-full bg-gray-50 border border-gray-200 p-3 text-sm outline-none focus:border-[var(--color-primary)] focus:bg-white transition-all disabled:opacity-50" />
+                </div>
+                <div>
+                  <label className="block text-gray-800 text-xs uppercase tracking-wider mb-2 font-bold">Subject</label>
+                  <input required type="text" disabled={isSubmitting} className="w-full bg-gray-50 border border-gray-200 p-3 text-sm outline-none focus:border-[var(--color-primary)] focus:bg-white transition-all disabled:opacity-50" />
+                </div>
+                <div>
+                  <label className="block text-gray-800 text-xs uppercase tracking-wider mb-2 font-bold">Your message (optional)</label>
+                  <textarea rows={4} disabled={isSubmitting} className="w-full bg-gray-50 border border-gray-200 p-3 text-sm outline-none focus:border-[var(--color-primary)] focus:bg-white transition-all resize-none disabled:opacity-50"></textarea>
+                </div>
+                <div className="pt-2">
+                  <button type="submit" disabled={isSubmitting} className="w-full bg-[#111111] text-white uppercase text-sm font-bold tracking-widest px-8 py-4 hover:bg-[var(--color-primary)] hover:shadow-[0_4px_20px_rgba(242,101,34,0.3)] transition-all transform hover:-translate-y-1 disabled:opacity-70 disabled:hover:translate-y-0 disabled:hover:shadow-none">
+                    {isSubmitting ? 'SENDING...' : 'SEND MESSAGE'}
+                  </button>
+                </div>
+              </form>
+            </div>
+
           </div>
 
         </div>
       </section>
-
-      {/* NEW: Still Have Questions */}
-      <StillHaveQuestions />
-
-      {/* NEW: Emergency Banner */}
-      <EmergencyBanner />
-
     </div>
   )
 }

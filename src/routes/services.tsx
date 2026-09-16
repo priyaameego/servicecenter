@@ -104,7 +104,7 @@ function Services() {
       />
       <PageHero
         title="Our Services"
-        image="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2000&auto=format&fit=crop"
+        image="https://images.unsplash.com/photo-1581092335397-9583eb92d232?q=80&w=2000&auto=format&fit=crop"
         breadcrumbs={[
           { label: 'Home', to: '/' },
           { label: 'Services' },
@@ -133,6 +133,45 @@ function Services() {
                 link={service.link}
               />
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Products We Service */}
+      <section className="section-padding bg-white border-b border-gray-100">
+        <div className="container-custom">
+          <div className="text-center mb-12 reveal">
+            <span className="text-[var(--color-primary)] font-bold uppercase tracking-wider text-sm mb-2 block">Our Capabilities</span>
+            <h2 className="text-3xl md:text-4xl font-extrabold mb-4 uppercase">PRODUCTS WE SERVICE</h2>
+            <div className="w-20 h-1 bg-[var(--color-primary)] mx-auto mb-6"></div>
+            <p className="text-[#555555] max-w-2xl mx-auto leading-relaxed">
+              Our service capabilities cover a broad range of Black+Decker appliances, including:
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 reveal-group">
+            <div className="bg-[var(--color-bg-light)] p-8 border-t-4 border-[var(--color-primary)] premium-card">
+              <h3 className="text-xl font-bold mb-4 uppercase" style={{ fontFamily: 'var(--font-heading)' }}>Kitchen Appliances</h3>
+              <p className="text-sm text-[#555555] leading-relaxed">Air Fryers • Blenders • Mixers • Grinders • Choppers • Juicers • Food Processors • Toasters • Kettles • Coffee Makers • Rice Cookers • Microwave Ovens</p>
+            </div>
+            <div className="bg-[var(--color-bg-light)] p-8 border-t-4 border-[#1A1A1A] premium-card">
+              <h3 className="text-xl font-bold mb-4 uppercase" style={{ fontFamily: 'var(--font-heading)' }}>Garment Care</h3>
+              <p className="text-sm text-[#555555] leading-relaxed">Steam Irons • Garment Steamers</p>
+            </div>
+            <div className="bg-[var(--color-bg-light)] p-8 border-t-4 border-[var(--color-primary)] premium-card">
+              <h3 className="text-xl font-bold mb-4 uppercase" style={{ fontFamily: 'var(--font-heading)' }}>Home & Floor Care</h3>
+              <p className="text-sm text-[#555555] leading-relaxed">Vacuum Cleaners • Handheld Vacuums • Cleaning Appliances</p>
+            </div>
+            <div className="bg-[var(--color-bg-light)] p-8 border-t-4 border-[#1A1A1A] premium-card">
+              <h3 className="text-xl font-bold mb-4 uppercase" style={{ fontFamily: 'var(--font-heading)' }}>Home Comfort</h3>
+              <p className="text-sm text-[#555555] leading-relaxed">Fans • Air Coolers • Heaters • Humidifiers and selected home-comfort appliances</p>
+            </div>
+          </div>
+          
+          <div className="text-center mt-10 reveal">
+            <p className="text-xs text-gray-500 italic bg-gray-50 p-4 rounded-sm inline-block border border-gray-100">
+              *Product serviceability may vary depending on model, spare-parts availability, warranty status, and product condition.
+            </p>
           </div>
         </div>
       </section>

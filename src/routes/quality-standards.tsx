@@ -1,9 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { SEO } from '../components/SEO'
-import { Award, AlertTriangle, ClipboardCheck, Star, Clock, DollarSign, MessageSquare, Lock, AlertCircle, Leaf, Wrench, ShieldCheck } from 'lucide-react'
+import { ClipboardCheck, Star, Clock, DollarSign, MessageSquare, Lock, AlertCircle, Leaf, Wrench, ShieldCheck } from 'lucide-react'
 import { PageHero } from '../components/PageHero'
-import { Certifications } from '../sections/quality/Certifications'
-import { TestingFacility } from '../sections/quality/TestingFacility'
 
 export const Route = createFileRoute('/quality-standards')({
   component: QualityStandards,
@@ -112,77 +110,34 @@ function QualityStandards() {
 
       {/* ── INTRO ── */}
       <section className="section-padding bg-white">
-        <div className="container-custom max-w-5xl">
-
-          <div className="text-center mb-14 reveal">
-            <span className="section-eyebrow">Our Commitment</span>
-            <h2 className="section-title">QUALITY &amp; SAFETY POLICY</h2>
-            <div className="section-divider-center mb-6" />
-            <p className="text-[#555555] max-w-3xl mx-auto text-base leading-[1.85]">
-              ServiceCenter.ae prides itself on its commitment to quality, customer service and safety. As an authorized service center for premier tool and appliance brands, we have developed rigorous internal standards to ensure every repair meets OEM specifications.
-            </p>
-          </div>
-
-          {/* ── QUALITY + SAFETY CARDS ── */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 reveal-group">
-            {/* Quality */}
-            <div className="bg-white p-8 md:p-10 shadow-[var(--shadow-premium)] border border-gray-100 rounded-sm hover:shadow-[var(--shadow-premium-hover)] hover:-translate-y-1.5 transition-all duration-500 ease-out group reveal">
-              <div className="flex items-center mb-6">
-                <div className="w-12 h-12 bg-[var(--color-primary)]/10 border border-[var(--color-primary)]/20 flex items-center justify-center mr-4 group-hover:bg-[var(--color-primary)] transition-colors duration-500">
-                  <Award className="w-6 h-6 text-[var(--color-primary)] group-hover:text-white transition-colors duration-500" />
-                </div>
-                <h3 className="text-2xl font-bold tracking-wide">QUALITY</h3>
-              </div>
-              <p className="text-[#555555] leading-[1.85] mb-6">
-                ServiceCenter.ae is committed to providing our clients with a premium standard of excellence. We are dedicated to working closely with our customers to ensure that their equipment repair needs are met with precision. We deliver a repair of uncompromising quality and are not satisfied until our customer is satisfied.
-              </p>
-              <ul className="space-y-3">
-                {[
-                  'Rigorous diagnostic and post-repair testing protocols.',
-                  'Exclusive use of premium-grade, certified genuine spare parts.',
-                  'Continuous manufacturer-led training for our technical staff.',
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-3">
-                    <span className="mt-1 w-4 h-4 flex-shrink-0 bg-[var(--color-primary)] text-white rounded-full flex items-center justify-center text-[10px] font-bold">✓</span>
-                    <span className="text-[#555555] text-sm leading-relaxed">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Safety */}
-            <div className="bg-white p-8 md:p-10 shadow-[var(--shadow-premium)] border border-gray-100 rounded-sm hover:shadow-[var(--shadow-premium-hover)] hover:-translate-y-1.5 transition-all duration-500 ease-out group reveal">
-              <div className="flex items-center mb-6">
-                <div className="w-12 h-12 bg-[var(--color-primary)]/10 border border-[var(--color-primary)]/20 flex items-center justify-center mr-4 group-hover:bg-[var(--color-primary)] transition-colors duration-500">
-                  <AlertTriangle className="w-6 h-6 text-[var(--color-primary)] group-hover:text-white transition-colors duration-500" />
-                </div>
-                <h3 className="text-2xl font-bold tracking-wide">SAFETY</h3>
-              </div>
-              <p className="text-[#555555] leading-[1.85] mb-6">
-                Safety within our workshop is stressed and strictly enforced at ServiceCenter.ae. Our technicians adhere to comprehensive safety guidelines when handling, diagnosing, and testing high-powered equipment and appliances. Management is proud of the excellent safety record of our team and ensures a secure environment for both staff and visiting customers.
-              </p>
-              <ul className="space-y-3">
-                {[
-                  'Mandatory protective gear for all workshop technicians.',
-                  'Regular tool calibration and electrical safety audits.',
-                  'Zero-tolerance policy for safety standard violations.',
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-3">
-                    <span className="mt-1 w-4 h-4 flex-shrink-0 bg-[var(--color-primary)] text-white rounded-full flex items-center justify-center text-[10px] font-bold">✓</span>
-                    <span className="text-[#555555] text-sm leading-relaxed">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
+        <div className="container-custom max-w-4xl mx-auto text-center reveal">
+          <span className="section-eyebrow">Our Commitment</span>
+          <h2 className="section-title">QUALITY &amp; SAFETY POLICY</h2>
+          <div className="section-divider-center mb-6" />
+          <p className="text-[#555555] text-base leading-[1.85] mb-12">
+            ServiceCenter.ae prides itself on its commitment to quality, customer service, and safety. As a dedicated Black+Decker service center, we have spent years developing into a full-service appliance repair facility with the ability to adapt to our customers’ every need.
+          </p>
         </div>
       </section>
 
-      {/* NEW: Certifications Section */}
-      <Certifications />
+      {/* ── QUALITY & SAFETY TEXT SECTIONS ── */}
+      <section className="py-12 bg-[var(--color-bg-light)]">
+        <div className="container-custom max-w-4xl mx-auto">
+          <div className="bg-white p-8 md:p-12 shadow-[var(--shadow-premium)] border border-gray-100 rounded-sm mb-8 reveal">
+            <h3 className="text-2xl font-bold tracking-wide mb-4 uppercase" style={{ fontFamily: 'var(--font-heading)' }}>Quality</h3>
+            <p className="text-[#555555] leading-[1.85]">
+              ServiceCenter.ae is committed to providing a premium standard of excellence in appliance repair. We are dedicated to working with our customers to ensure that their home and kitchen appliance concerns are addressed and solutions are provided through proper diagnosis and professional workmanship. We produce a repair of uncompromising quality, using appropriate and genuine spare parts where available, and are not satisfied until our customer is satisfied. Every appliance undergoes rigorous functional testing and quality checks before collection.
+            </p>
+          </div>
 
-      {/* NEW: Testing Facility Section */}
-      <TestingFacility />
+          <div className="bg-white p-8 md:p-12 shadow-[var(--shadow-premium)] border border-gray-100 rounded-sm reveal">
+            <h3 className="text-2xl font-bold tracking-wide mb-4 uppercase" style={{ fontFamily: 'var(--font-heading)' }}>Safety</h3>
+            <p className="text-[#555555] leading-[1.85]">
+              Safety within our workshop is stressed and strictly enforced at ServiceCenter.ae. Our technicians adhere strictly to comprehensive safety guidelines and service procedures when handling, inspecting, and testing your appliances to ensure safe and reliable servicing. Management is proud of the excellent safety record of our team and will continue to work closely with employees to ensure a secure environment for both staff and visiting customers.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* ── SERVICE EXCELLENCE POLICY ── */}
       <section className="section-padding bg-[var(--color-bg-light)]">
