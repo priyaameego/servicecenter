@@ -71,7 +71,9 @@ export function Header() {
             </div>
             <div className="flex items-center group">
               <Clock className="w-4 h-4 mr-2.5 text-[var(--color-primary)] stroke-[2] transition-transform duration-300 group-hover:scale-110" />
-              <span>Monday to Saturday, 9:00 AM – 7:00 PM</span>
+              <Link to="/contact-us" className="group-hover:text-[var(--color-primary)] transition-colors cursor-pointer">
+                Monday to Saturday, 9:00 AM – 7:00 PM
+              </Link>
             </div>
           </div>
         </div>
