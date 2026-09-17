@@ -39,6 +39,42 @@
     0%   { background-position: -200% center; }
     100% { background-position: 200% center; }
   }
+
+  @keyframes kenburns-zoom-in {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.12);
+    }
+  }
+
+  @keyframes kenburns-zoom-out {
+    0% {
+      transform: scale(1.12);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes pulse-subtle {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.04); }
+  }
+}
+
+/* Ken Burns utilities */
+.animate-kenburns-1 {
+  animation: kenburns-zoom-in 7s ease-out forwards;
+}
+
+.animate-kenburns-2 {
+  animation: kenburns-zoom-out 7s ease-out forwards;
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 3s ease-in-out infinite;
 }
 
 /* ================================================================
@@ -67,7 +103,6 @@
 
   h2 {
     font-family: var(--font-heading);
-    @apply text-[#111111] font-bold uppercase;
     letter-spacing: 0.05em;
     line-height: 1.1;
     font-weight: 700;
@@ -75,15 +110,15 @@
 
   h3 {
     font-family: var(--font-subheading);
-    @apply text-[#1A1A1A] font-semibold;
     letter-spacing: 0.02em;
     line-height: 1.3;
+    font-weight: 600;
   }
 
   h4, h5, h6 {
     font-family: var(--font-subheading);
-    @apply text-[#1A1A1A] font-semibold uppercase;
     letter-spacing: 0.06em;
+    font-weight: 600;
   }
 
   /* === BODY COPY === */
@@ -250,6 +285,17 @@
   .reveal-group > *:nth-child(4) { transition-delay: 400ms; }
   .reveal-group > *:nth-child(5) { transition-delay: 500ms; }
   .reveal-group > *:nth-child(6) { transition-delay: 600ms; }
+
+  /* ----- Service card hover title ----- */
+  .service-card-title {
+    color: #1a1a1a;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+  }
+
+  .group:hover .service-card-title {
+    color: #ffffff !important;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.95) !important;
+  }
 
   /* Reduced-motion overrides */
   @media (prefers-reduced-motion: reduce) {

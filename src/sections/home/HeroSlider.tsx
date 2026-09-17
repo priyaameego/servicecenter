@@ -29,12 +29,14 @@ export function HeroSlider() {
           currentSlide === 0 ? 'opacity-100 z-10 visible' : 'opacity-0 z-0 invisible pointer-events-none'
         }`}
       >
-        {/* Background Image with Dark Mask */}
-        <div className="absolute inset-0 z-0">
+        {/* Background Image with Dark Mask & Ken Burns Effect */}
+        <div className="absolute inset-0 z-0 overflow-hidden">
           <img 
             src="https://lhe.ae/wp-content/uploads/2024/01/elementos-de-protaccion-personal-para-personas-que.jpg" 
             alt="Safety and Precision Care"
-            className="w-full h-full object-cover object-center brightness-90"
+            className={`w-full h-full object-cover object-center brightness-90 transition-transform duration-1000 ${
+              currentSlide === 0 ? 'animate-kenburns-1' : 'scale-100'
+            }`}
             loading="eager"
           />
           <div className="absolute inset-0 bg-black/50 md:bg-black/40" />
@@ -42,7 +44,9 @@ export function HeroSlider() {
 
         {/* Center Content: Red Box Border with Headline */}
         <div className="container-custom relative z-10 h-full flex items-center justify-center px-4 sm:px-6">
-          <div className="border-[4px] sm:border-[5px] md:border-[6px] border-[#e30613] p-6 sm:p-10 md:p-14 lg:p-16 max-w-4xl w-full text-center shadow-2xl bg-black/35 backdrop-blur-[2px]">
+          <div className={`border-[4px] sm:border-[5px] md:border-[6px] border-[#e30613] p-6 sm:p-10 md:p-14 lg:p-16 max-w-4xl w-full text-center shadow-2xl bg-black/35 backdrop-blur-[2px] transition-all duration-700 ${
+            currentSlide === 0 ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'
+          }`}>
             <h1 
               className="!text-white text-2xl sm:text-4xl md:text-5xl lg:text-[54px] font-black uppercase tracking-tight leading-[1.2] drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]"
               style={{ fontFamily: 'var(--font-heading)', color: '#ffffff' }}
@@ -59,12 +63,14 @@ export function HeroSlider() {
           currentSlide === 1 ? 'opacity-100 z-10 visible' : 'opacity-0 z-0 invisible pointer-events-none'
         }`}
       >
-        {/* Background Image with Dark Mask */}
-        <div className="absolute inset-0 z-0">
+        {/* Background Image with Dark Mask & Ken Burns Effect */}
+        <div className="absolute inset-0 z-0 overflow-hidden">
           <img 
             src="https://lhe.ae/wp-content/uploads/2024/01/Photo-of-an-electrician-man.-with-tools.jpg" 
             alt="Authorized Service Center Workshop"
-            className="w-full h-full object-cover object-center brightness-90"
+            className={`w-full h-full object-cover object-center brightness-90 transition-transform duration-1000 ${
+              currentSlide === 1 ? 'animate-kenburns-2' : 'scale-100'
+            }`}
             loading="lazy"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/40" />
