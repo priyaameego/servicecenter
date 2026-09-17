@@ -25,6 +25,7 @@ export function Header() {
     { name: 'FAQ’s', path: '/faq' },
     { name: 'QUALITY & STANDARDS', path: '/quality-standards' },
     { name: 'T&C', path: '/terms-and-conditions' },
+    { name: 'BLOG', path: '/blog' },
     { name: 'CONTACT US', path: '/contact-us' },
   ];
 
@@ -33,7 +34,7 @@ export function Header() {
       
       {/* 3D Drop Shadow Wrapper for Red Slanted Nav */}
       <div 
-        className="hidden lg:block absolute bottom-0 right-0 h-[56px] w-[calc(100%-250px)] xl:w-[calc(100%-350px)] 2xl:w-[calc(100%-450px)] pointer-events-none z-0 filter drop-shadow-[-6px_0_12px_rgba(227,6,19,0.15)]"
+        className="hidden lg:block absolute bottom-0 right-0 h-[56px] w-[calc(100%-200px)] xl:w-[calc(100%-300px)] 2xl:w-[calc(100%-400px)] pointer-events-none z-0 filter drop-shadow-[-6px_0_12px_rgba(227,6,19,0.15)]"
       >
         <div 
           className="w-full h-full bg-gradient-to-r from-[var(--color-primary)] to-[#cc0511] pointer-events-auto"
@@ -44,13 +45,16 @@ export function Header() {
         </div>
       </div>
 
-      <div className="container-custom relative h-[80px] lg:h-[114px]">
+      <div className="container-custom relative flex flex-col justify-between h-[95px] lg:h-[110px]">
         {/* Top Left: Logo */}
-        <Link to="/" className="absolute left-4 top-0 h-full py-1.5 z-20 group flex items-center">
+        <Link 
+          to="/" 
+          className="absolute left-3 sm:left-5 lg:left-6 top-1/2 -translate-y-1/2 z-30 h-[76px] sm:h-[86px] lg:h-[96px] flex items-center group py-0.5"
+        >
           <img 
             src="/logo.png" 
             alt="Service Center Logo" 
-            className="h-full w-auto object-contain transition-transform duration-500 ease-out group-hover:scale-[1.02]" 
+            className="h-full w-auto object-contain transition-transform duration-300 ease-out group-hover:scale-[1.03]" 
           />
         </Link>
         
@@ -79,8 +83,8 @@ export function Header() {
         </div>
 
         {/* Bottom Right: Nav (Desktop) */}
-        <div className="hidden lg:flex absolute bottom-0 right-0 h-[56px] w-full justify-end items-center z-20 pr-6 pl-[280px] xl:pl-[380px] 2xl:pl-[480px]">
-          <nav className="flex items-center space-x-5 xl:space-x-7 text-white font-heading font-bold text-sm xl:text-base tracking-widest h-full mr-auto">
+        <div className="hidden lg:flex absolute bottom-0 right-0 h-[56px] w-full justify-end items-center z-20 pr-6 pl-[230px] xl:pl-[330px] 2xl:pl-[430px]">
+          <nav className="flex items-center space-x-3.5 xl:space-x-6 text-white font-heading font-bold text-xs xl:text-sm 2xl:text-base tracking-wider xl:tracking-widest h-full mr-auto">
             {navLinks.map((link) => (
               <div key={link.name} className="relative group h-full flex items-center">
                 <Link 
@@ -133,10 +137,14 @@ export function Header() {
           isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
-        <div className="flex justify-between items-center p-6 border-b border-gray-100/80 bg-gray-50/50">
-          <span className="font-heading font-extrabold text-xl text-[#1A1A1A] tracking-tighter">
-            MENU
-          </span>
+        <div className="flex justify-between items-center p-5 border-b border-gray-100 bg-gray-50/70">
+          <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center">
+            <img 
+              src="/logo.png" 
+              alt="Service Center Logo" 
+              className="h-11 w-auto object-contain" 
+            />
+          </Link>
           <button 
             className="p-2 bg-white border border-gray-200 rounded-full text-gray-500 hover:text-[var(--color-primary)] hover:border-[var(--color-primary)] transition-all duration-300 focus:outline-none shadow-sm"
             onClick={() => setIsMobileMenuOpen(false)}
@@ -148,7 +156,7 @@ export function Header() {
 
         <div className="flex-1 overflow-y-auto py-6 px-6">
           <nav className="flex flex-col space-y-2">
-            {[...navLinks, { name: 'CONTACT', path: '/contact-us' }].map((link) => (
+            {navLinks.map((link) => (
               <div key={link.name} className="flex flex-col">
                 <div className="flex justify-between items-center group/moblink">
                   <Link 

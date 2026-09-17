@@ -4,6 +4,7 @@ import { HeroSlider } from '../sections/home/HeroSlider';
 import { IntroSection } from '../sections/home/IntroSection';
 import { WhyChooseUs } from '../sections/home/WhyChooseUs';
 import { ServicesOverview } from '../sections/home/ServicesOverview';
+import { ProductsWeService } from '../sections/home/ProductsWeService';
 import { AuthorizedBrands } from '../sections/home/AuthorizedBrands';
 import { RepairProcess } from '../sections/home/RepairProcess';
 import { StatsSection } from '../sections/home/StatsSection';
@@ -34,10 +35,13 @@ function Index() {
       {/* 4. Services Grid */}
       <ServicesOverview />
       
-      {/* 5. Authorized Service Center Brands */}
+      {/* 5. Products We Service (Categories Breakdown) */}
+      <ProductsWeService />
+
+      {/* 6. Authorized Service Center Brands */}
       <AuthorizedBrands />
 
-      {/* 6. Repair Process Timeline */}
+      {/* 7. Repair Process Timeline */}
       <RepairProcess />
       
       {/* 7. What We've Done (Statistics/Counters banner) */}

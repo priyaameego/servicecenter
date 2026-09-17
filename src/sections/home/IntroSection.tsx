@@ -29,13 +29,18 @@ export function IntroSection() {
             <span className="section-eyebrow">Our Expertise</span>
             <h2 className="section-title">WHAT WE DO</h2>
             <div className="section-divider mb-7" />
+            <p className="text-[#555555] mb-6 leading-[1.85]">
+              At our <strong className="text-gray-900 font-semibold">Black+Decker Service Center</strong>, we provide professional repair, maintenance, and after-sales support for a wide range of Black+Decker home and kitchen appliances. Our service center is equipped with dedicated repair facilities, diagnostic tools, and experienced technicians to ensure every appliance is inspected carefully and serviced to the required standards.
+            </p>
 
-            <p className="text-[#555555] mb-5 leading-[1.85]">
-              At our Black+Decker Service Center, we provide professional repair, maintenance, and after-sales support for a wide range of Black+Decker home and kitchen appliances. Our service center is equipped with dedicated repair facilities, diagnostic tools, and experienced technicians to ensure every appliance is inspected carefully and serviced to the required standards.
-            </p>
-            <p className="text-[#555555] mb-8 leading-[1.85]">
-              We diagnose and repair a wide range of Black+Decker home and kitchen appliances, from everyday kitchen essentials to cleaning and home-comfort products. Our services include troubleshooting, component replacement, electrical repairs, preventive maintenance, performance testing, and general servicing.
-            </p>
+            <div className="mb-8 border-l-4 border-[var(--color-primary)] pl-5 py-1 bg-gray-50/60 rounded-r-md">
+              <h3 className="text-lg font-bold text-[#111111] uppercase tracking-wide mb-2" style={{ fontFamily: 'var(--font-heading)' }}>
+                Appliance Repair &amp; Maintenance
+              </h3>
+              <p className="text-[#555555] text-sm md:text-base leading-[1.8]">
+                We diagnose and repair a wide range of <strong className="text-gray-900 font-semibold">Black+Decker home and kitchen appliances</strong>, from everyday kitchen essentials to cleaning and home-comfort products. Our services include troubleshooting, component replacement, electrical repairs, preventive maintenance, performance testing, and general servicing.
+              </p>
+            </div>
 
             <Button to="/about-us" variant="secondary">READ MORE ABOUT US</Button>
           </div>

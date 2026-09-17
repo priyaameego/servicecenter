@@ -7,6 +7,7 @@ const quickLinks = [
   { label: "FAQ's", to: '/faq' },
   { label: 'Quality & Standards', to: '/quality-standards' },
   { label: 'T&C', to: '/terms-and-conditions' },
+  { label: 'Blog', to: '/blog' },
   { label: 'Contact Us', to: '/contact-us' },
   { label: 'Privacy Policy', to: '/privacy-policy' },
 ];
@@ -55,12 +56,12 @@ export function Footer() {
 
           {/* --- COLUMN 1: Brand --- */}
           <div className="lg:col-span-1">
-            {/* Logo in white box */}
-            <div className="inline-block bg-white p-4 mb-6 shadow-[0_4px_30px_rgba(242,101,34,0.25)] hover:shadow-[0_8px_40px_rgba(242,101,34,0.45)] transition-shadow duration-500">
+            {/* Logo in clean branded container */}
+            <div className="inline-block bg-white rounded-lg p-3 sm:p-3.5 mb-6 shadow-[0_4px_25px_rgba(242,101,34,0.2)] hover:shadow-[0_8px_30px_rgba(242,101,34,0.35)] transition-all duration-300">
               <img
                 src="/logo.png"
                 alt="ServiceCenter.ae Logo"
-                className="h-20 w-auto object-contain"
+                className="h-16 sm:h-20 w-auto object-contain"
               />
             </div>
 

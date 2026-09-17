@@ -1,99 +1,50 @@
 import { useState, type FormEvent } from 'react'
-import { createFileRoute, Link } from '@tanstack/react-router'
+import { createFileRoute, Link, Outlet, useChildMatches } from '@tanstack/react-router'
 import { Home, CheckCircle2, AlertCircle } from 'lucide-react'
 import { SEO } from '../components/SEO'
+import { Hammer, ChefHat, Utensils, Shirt, Wind, Zap } from 'lucide-react'
+import { ProductsWeService } from '../sections/home/ProductsWeService'
 
 export const Route = createFileRoute('/services')({
   component: Services,
 })
 
-function GearsIcon({ className = "w-10 h-10 text-white" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-      <path d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z" />
-    </svg>
-  );
-}
-
-function FactoryIcon({ className = "w-10 h-10 text-white" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M2 20h20M3 20V9l5 4V9l5 4V4h4v16M19 14h-2M19 17h-2M15 17h-2M15 14h-2M7 17H5" />
-    </svg>
-  );
-}
-
-function CraneIcon({ className = "w-10 h-10 text-white" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M2 19h20M3 16h18M4 16v3M8 16v3M12 16v3M16 16v3M20 16v3M6 13h7l3-6h4M13 7l-5 6" />
-      <rect x="4" y="10" width="6" height="3" rx="1" />
-    </svg>
-  );
-}
-
-function PumpIcon({ className = "w-10 h-10 text-white" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M5 21h14M8 21v-3h8v3M12 18V9M8 9h8M6 9l6-6 6 6" />
-      <circle cx="12" cy="13" r="2" />
-    </svg>
-  );
-}
-
-function CompressorIcon({ className = "w-10 h-10 text-white" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M2 20a2.4 2.4 0 0 0 2 1 2.4 2.4 0 0 0 2-1 2.4 2.4 0 0 1 2-1 2.4 2.4 0 0 1 2 1 2.4 2.4 0 0 0 2 1 2.4 2.4 0 0 0 2-1" />
-      <path d="M3 17l1.5-6h15l1.5 6H3zM7 11V6h5v5M14 11V8h3v3" />
-    </svg>
-  );
-}
-
-function RigIcon({ className = "w-10 h-10 text-white" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M4 22h16M7 22l5-19 5 19M6.5 16h11M8 11h8M10 7h4" />
-    </svg>
-  );
-}
-
 const serviceItems = [
   {
-    title: 'AC & DC MOTOR',
-    description: 'Our skilled technicians specialize in the rewinding, repair, and maintenance of both AC and DC motors',
-    link: '/services/ac-dc-motor',
-    Icon: GearsIcon
+    title: 'RICE COOKERS & STEAMERS',
+    description: 'Specialized diagnostic, thermal fuse, heating plate and electronic board repair for rice cookers and food steamers.',
+    link: '/services/rice-cooker',
+    Icon: ChefHat
   },
   {
-    title: 'GENERATORS',
-    description: 'Count on us for reliable generator services, encompassing thorough inspections, repairs, and maintenance.',
-    link: '/services/generators',
-    Icon: FactoryIcon
+    title: 'BLENDERS & FOOD PROCESSORS',
+    description: 'Precision blade alignment, motor coupling replacement, speed dial troubleshooting, and jar seal servicing.',
+    link: '/services/blender-food-processor',
+    Icon: Utensils
   },
   {
-    title: 'ROTATING PARTS',
-    description: 'Our services cover the inspection, repair, and maintenance of rotating parts of electrical machinery.',
-    link: '/services/rotating-parts',
-    Icon: CraneIcon
+    title: 'GARMENT STEAMERS & IRONS',
+    description: 'Boiler descaling, steam pump repair, soleplate maintenance, and thermal safety inspection for garment care units.',
+    link: '/services/garment-steamer',
+    Icon: Shirt
   },
   {
-    title: 'WATER PUMPS',
-    description: 'From routine maintenance to emergency repairs, we provide comprehensive solutions for efficient water circulation.',
-    link: '/services/water-pumps',
-    Icon: PumpIcon
+    title: 'VACUUM CLEANERS',
+    description: 'Restoration of optimal suction, filter replacement, motor servicing, and battery diagnosis for cordless vacs.',
+    link: '/services/vacuum-cleaner',
+    Icon: Wind
   },
   {
-    title: 'COMPRESSOR & STATOR',
-    description: 'Our skilled technicians are equipped to handle the repair and maintenance of compressors and stators, etc',
-    link: '/services/compressor-stator',
-    Icon: CompressorIcon
+    title: 'POWER TOOLS',
+    description: 'Comprehensive diagnostic, battery diagnostics, brush replacements, and safety testing for cordless drills and drivers.',
+    link: '/services/power-tools',
+    Icon: Hammer
   },
   {
-    title: 'DYNAMIC BALANCING FOR ROTOR',
-    description: 'Ensure optimal performance and prevent wear with our dynamic balancing services for rotors.',
-    link: '/services/dynamic-balancing-for-rotor',
-    Icon: RigIcon
+    title: 'ELECTRIC JIGSAWS & CUTTERS',
+    description: 'Mechanical blade clamp inspection, gearbox lubrication, switch repair, and precision motor alignment.',
+    link: '/services/electric-jigsaw',
+    Icon: Zap
   }
 ];
 
@@ -105,6 +56,11 @@ interface ContactFormData {
 }
 
 function Services() {
+  const childMatches = useChildMatches()
+  if (childMatches && childMatches.length > 0) {
+    return <Outlet />
+  }
+
   const [formData, setFormData] = useState<ContactFormData>({
     name: '',
     email: '',
@@ -143,7 +99,7 @@ function Services() {
     <div className="flex flex-col w-full bg-white">
       <SEO 
         title="Services" 
-        description="Welcome to our comprehensive suite of electrical machinery services, where precision meets performance." 
+        description="Professional repair, maintenance, and after-sales support for Black+Decker home and kitchen appliances in Dubai, UAE." 
         path="/services" 
       />
 
@@ -184,7 +140,7 @@ function Services() {
               OUR SERVICES <span className="text-[var(--color-primary)]">OVERVIEW</span>
             </h2>
             <p className="text-gray-600 text-base md:text-lg max-w-3xl mx-auto leading-relaxed font-light">
-              Welcome to our comprehensive suite of electrical machinery services, where precision meets performance.
+              We provide professional repair, maintenance, and after-sales support for a wide range of Black+Decker home and kitchen appliances.
             </p>
           </div>
 
@@ -214,6 +170,9 @@ function Services() {
 
         </div>
       </section>
+
+      {/* PRODUCTS WE SERVICE (All 4 Categories Breakdown) */}
+      <ProductsWeService />
 
       {/* NEED CONSULTATION? Section */}
       <section className="py-20 md:py-28 bg-[#ededed]">

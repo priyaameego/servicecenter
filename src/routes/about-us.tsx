@@ -71,7 +71,7 @@ function AboutUs() {
     <div className="flex flex-col w-full bg-white">
       <SEO 
         title="About Us" 
-        description="Since 1974, providing reliable electromechanical repair, maintenance, and precision services across the UAE." 
+        description="Black+Decker Service Center Dubai - Professional repair, maintenance, and warranty support for Black+Decker home and kitchen appliances." 
         path="/about-us" 
       />
 
@@ -114,7 +114,7 @@ function AboutUs() {
               </h2>
               
               <p className="text-gray-600 text-base md:text-lg leading-relaxed font-light mb-8">
-                Since establishing the company in the year of 1974 in Abu Dhabi, United Arab Emirates, Light House Electrical Co. has a long time history of providing services and solutions to the full satisfaction of all our clients in industry, military and marine applications.
+                At our Black+Decker Service Center, we provide professional repair, maintenance, and after-sales support for a wide range of Black+Decker home and kitchen appliances. With dedicated repair facilities, diagnostic tools, and experienced technicians, we ensure every appliance is inspected carefully and serviced to the required manufacturer standards.
               </p>
 
               {/* 4 Items Check List */}
@@ -134,14 +134,14 @@ function AboutUs() {
                 <div className="overflow-hidden shadow-lg group aspect-square bg-gray-100">
                   <img 
                     src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=800&auto=format&fit=crop" 
-                    alt="Engine and gears" 
+                    alt="Inspection and diagnostics" 
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                 </div>
                 <div className="overflow-hidden shadow-lg group aspect-square bg-gray-100">
                   <img 
                     src="https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?q=80&w=800&auto=format&fit=crop" 
-                    alt="Motor rotor shafts" 
+                    alt="Precision workshop equipment" 
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                 </div>
@@ -184,19 +184,19 @@ function AboutUs() {
 
               <div className="space-y-4 text-gray-600 text-base leading-relaxed font-light">
                 <p>
-                  We are a fully equipped industrial services company that offer a full range of products and services tailored to increase productivity and reliability of our customers. Our values of quality and service are reflected in the solutions we provide and the commitment we make to our customers.
+                  Our objective is not simply to fix a fault. We aim to help extend the useful life of your Black+Decker appliance through proper diagnosis, professional workmanship, appropriate spare parts, and dependable after-sales support.
                 </p>
                 <p>
-                  Our goal is achieving the highest possible performance in all works carried out with the best standards of equipment and highly professional trained employees.
+                  Our goal is achieving the highest possible customer satisfaction in all works carried out with OEM diagnostic tools and highly professional factory-trained technicians.
                 </p>
                 <p>
-                  We target to create long term business relations with all our customers to their uncompromised satisfactions, offering the highest standards services and workmanship.
+                  Every serviced appliance undergoes comprehensive electrical and functional testing before it is released to the customer.
                 </p>
               </div>
 
               {/* 4 Feature Badges */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-8">
-                {['REPAIR', 'MAINTENANCE', 'AC & DC MOTORS', 'WATER PUMPS'].map((feat) => (
+                {['APPLIANCE REPAIR', 'GENUINE PARTS', 'WARRANTY SUPPORT', 'QUALITY TESTING'].map((feat) => (
                   <div key={feat} className="flex items-center space-x-3">
                     <div className="w-8 h-8 bg-[var(--color-primary)] flex items-center justify-center shrink-0 shadow-sm">
                       <Check className="w-5 h-5 text-white stroke-[2.5]" />

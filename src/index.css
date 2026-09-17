@@ -60,7 +60,6 @@
   /* === HEADINGS === */
   h1 {
     font-family: var(--font-heading);
-    @apply text-[#111111] font-extrabold uppercase;
     letter-spacing: 0.04em;
     line-height: 1.05;
     font-weight: 800;

@@ -1,97 +1,189 @@
 import { useState, useEffect } from 'react';
-import { Button } from '../../components/ui/Button';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { dubaiBranch } from '../../data/business';
-
-const slides = [
-  {
-    id: 1,
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2000&auto=format&fit=crop",
-    title: "BLACK+DECKER SERVICE CENTER",
-    subtitle: "Professional Repair, Maintenance & After-Sales Support for a wide range of Black+Decker home and kitchen appliances."
-  },
-  {
-    id: 2,
-    image: "https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?q=80&w=2000&auto=format&fit=crop",
-    title: "BLACK+DECKER DEDICATED SUPPORT",
-    subtitle: "We provide expert warranty inspection, genuine spare parts, and dedicated out-of-warranty support for your appliances."
-  },
-  {
-    id: 3,
-    image: "https://images.unsplash.com/photo-1542013936693-884638332954?q=80&w=2000&auto=format&fit=crop",
-    title: "MORE THAN A REPAIR",
-    subtitle: "Our objective is not simply to fix a fault. We aim to help extend the useful life of your Black+Decker appliance. Your Black+Decker appliance deserves expert care."
-  }
-];
 
 export function HeroSlider() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-    }, 6000);
+      setCurrentSlide((prev) => (prev === 1 ? 0 : 1));
+    }, 7000);
     return () => clearInterval(timer);
   }, []);
 
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev === 0 ? 1 : 0));
+  };
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev === 1 ? 0 : 1));
+  };
+
   return (
-    <section className="relative h-[600px] md:h-[700px] bg-[#1A1A1A] overflow-hidden">
-      {slides.map((slide, index) => (
-        <div 
-          key={slide.id}
-          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-            index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'
-          }`}
-        >
-          <div className="absolute inset-0 z-0">
-            <img 
-              src={slide.image} 
-              alt={slide.title}
-              fetchPriority={index === 0 ? "high" : "auto"}
-              loading={index === 0 ? "eager" : "lazy"}
-              decoding="async"
-              className="w-full h-full object-cover opacity-60 brightness-110"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/30 to-transparent"></div>
-            <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#1A1A1A] to-transparent opacity-60"></div>
+    <section className="relative h-[560px] sm:h-[620px] md:h-[680px] lg:h-[720px] bg-[#111111] overflow-hidden select-none">
+      
+      {/* ==================== SLIDE 1: Safety & Precision Care ==================== */}
+      <div 
+        className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+          currentSlide === 0 ? 'opacity-100 z-10 visible' : 'opacity-0 z-0 invisible pointer-events-none'
+        }`}
+      >
+        {/* Background Image with Dark Mask */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://lhe.ae/wp-content/uploads/2024/01/elementos-de-protaccion-personal-para-personas-que.jpg" 
+            alt="Safety and Precision Care"
+            className="w-full h-full object-cover object-center brightness-90"
+            loading="eager"
+          />
+          <div className="absolute inset-0 bg-black/50 md:bg-black/40" />
+        </div>
+
+        {/* Center Content: Red Box Border with Headline */}
+        <div className="container-custom relative z-10 h-full flex items-center justify-center px-4 sm:px-6">
+          <div className="border-[4px] sm:border-[5px] md:border-[6px] border-[#e30613] p-6 sm:p-10 md:p-14 lg:p-16 max-w-4xl w-full text-center shadow-2xl bg-black/35 backdrop-blur-[2px]">
+            <h1 
+              className="!text-white text-2xl sm:text-4xl md:text-5xl lg:text-[54px] font-black uppercase tracking-tight leading-[1.2] drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]"
+              style={{ fontFamily: 'var(--font-heading)', color: '#ffffff' }}
+            >
+              WHAT YOU DON'T KNOW ABOUT SAFETY COULD HURT YOU
+            </h1>
           </div>
-          
-          <div className="container-custom relative z-10 h-full flex items-center">
-            <div className={`max-w-2xl transform transition-all duration-1000 delay-300 ${
-              index === currentSlide ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-            }`}>
-              <h1 className="text-4xl md:text-6xl font-heading font-extrabold text-white leading-tight mb-6 uppercase tracking-tight break-words">
-                {slide.title}
+        </div>
+      </div>
+
+      {/* ==================== SLIDE 2: Authorized Service Center ==================== */}
+      <div 
+        className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+          currentSlide === 1 ? 'opacity-100 z-10 visible' : 'opacity-0 z-0 invisible pointer-events-none'
+        }`}
+      >
+        {/* Background Image with Dark Mask */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://lhe.ae/wp-content/uploads/2024/01/Photo-of-an-electrician-man.-with-tools.jpg" 
+            alt="Authorized Service Center Workshop"
+            className="w-full h-full object-cover object-center brightness-90"
+            loading="lazy"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/40" />
+        </div>
+
+        {/* Content: Left Text & Right Badges */}
+        <div className="container-custom relative z-10 h-full flex items-center px-6 sm:px-10 lg:px-16">
+          <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center pt-8 md:pt-0">
+            
+            {/* Left Column: Heading, List & Button */}
+            <div className="lg:col-span-8">
+              <h1 
+                className="!text-white text-3xl sm:text-5xl md:text-6xl lg:text-[64px] font-black uppercase tracking-tight leading-[1.08] mb-6 drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]"
+                style={{ fontFamily: 'var(--font-heading)', color: '#ffffff' }}
+              >
+                AUTHORIZED<br />
+                SERVICE CENTER
               </h1>
-              <p className="text-lg text-gray-200 mb-8 max-w-xl border-l-4 border-[var(--color-primary)] pl-4">
-                {slide.subtitle}
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <Button to="/services" variant="primary">OUR SERVICES</Button>
+
+              {/* Bullet Points */}
+              <div className="space-y-1.5 sm:space-y-2 mb-8 font-bold text-sm sm:text-base md:text-lg tracking-wider uppercase">
+                <p className="text-[#e30613] text-base sm:text-lg font-black tracking-widest mb-3">
+                  5 STAR REPRESENTATION
+                </p>
+                <p className="flex items-center gap-2 !text-white" style={{ color: '#ffffff' }}>
+                  <span className="text-[#e30613] font-black text-xl leading-none">*</span>
+                  <span className="drop-shadow-sm">RAPID REPAIRS</span>
+                </p>
+                <p className="flex items-center gap-2 !text-white" style={{ color: '#ffffff' }}>
+                  <span className="text-[#e30613] font-black text-xl leading-none">*</span>
+                  <span className="drop-shadow-sm">HIGHEST QUALITY</span>
+                </p>
+                <p className="flex items-center gap-2 !text-white" style={{ color: '#ffffff' }}>
+                  <span className="text-[#e30613] font-black text-xl leading-none">*</span>
+                  <span className="drop-shadow-sm">WARRANTY REPAIRS</span>
+                </p>
+                <p className="flex items-center gap-2 !text-white" style={{ color: '#ffffff' }}>
+                  <span className="text-[#e30613] font-black text-xl leading-none">*</span>
+                  <span className="drop-shadow-sm">GENUINE FACTORY PARTS</span>
+                </p>
+                <p className="flex items-center gap-2 !text-white" style={{ color: '#ffffff' }}>
+                  <span className="text-[#e30613] font-black text-xl leading-none">*</span>
+                  <span className="drop-shadow-sm">ONLINE TECHNICAL SUPPORT</span>
+                </p>
+              </div>
+
+              {/* CALL US Button */}
+              <div>
                 <a 
                   href={`tel:${dubaiBranch.phone.replace(/\s+/g, '')}`} 
-                  className="inline-flex items-center justify-center px-7 py-3.5 font-heading text-sm md:text-base font-bold uppercase transition-all duration-300 border-2 border-white text-white hover:bg-white hover:text-[#1A1A1A]"
+                  className="inline-block bg-white hover:bg-[#e30613] !text-black hover:!text-white font-extrabold uppercase px-8 sm:px-10 py-3.5 sm:py-4 text-sm sm:text-base tracking-widest transition-all duration-300 shadow-xl"
+                  style={{ fontFamily: 'var(--font-heading)' }}
                 >
-                  CALL NOW
+                  CALL US
                 </a>
               </div>
             </div>
+
+            {/* Right Column: 3 Brand Badges */}
+            <div className="lg:col-span-4 flex flex-row lg:flex-col items-center lg:items-end justify-start lg:justify-center gap-4 sm:gap-5">
+              
+              {/* DeWALT Badge */}
+              <div className="bg-[#FEBD11] border-4 border-black p-3 sm:p-4 w-28 sm:w-36 md:w-44 lg:w-56 shadow-2xl flex items-center justify-center">
+                <span className="font-black text-lg sm:text-2xl md:text-3xl lg:text-4xl text-black tracking-tighter uppercase select-none">
+                  DEWALT
+                </span>
+              </div>
+
+              {/* STANLEY Badge */}
+              <div className="bg-[#FFCC00] p-3 sm:p-4 w-28 sm:w-36 md:w-44 lg:w-56 shadow-2xl flex items-center justify-center">
+                <span className="font-black text-base sm:text-xl md:text-2xl lg:text-3xl text-black tracking-tight uppercase select-none">
+                  STANLEY
+                </span>
+              </div>
+
+              {/* BLACK+DECKER Badge */}
+              <div className="bg-black border-[3px] border-[#FF6A00] p-3 sm:p-4 w-32 sm:w-40 md:w-48 lg:w-60 shadow-2xl flex flex-col items-center justify-center">
+                <span className="font-black text-sm sm:text-lg md:text-xl lg:text-2xl text-[#FF6A00] tracking-tight uppercase leading-tight select-none text-center">
+                  BLACK+<br className="sm:hidden" />DECKER
+                </span>
+              </div>
+
+            </div>
+
           </div>
         </div>
-      ))}
-      
-      {/* Slider Controls */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex space-x-3">
-        {slides.map((_, index) => (
+      </div>
+
+      {/* ==================== Navigation Controls: Left & Right Red Arrows ==================== */}
+      <button 
+        onClick={prevSlide}
+        className="absolute left-0 top-1/2 -translate-y-1/2 z-30 w-10 sm:w-12 md:w-14 h-14 sm:h-16 md:h-20 bg-[#e30613] hover:bg-black text-white flex items-center justify-center transition-colors duration-300 shadow-xl focus:outline-none"
+        aria-label="Previous Slide"
+      >
+        <ChevronLeft className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
+      </button>
+
+      <button 
+        onClick={nextSlide}
+        className="absolute right-0 top-1/2 -translate-y-1/2 z-30 w-10 sm:w-12 md:w-14 h-14 sm:h-16 md:h-20 bg-[#e30613] hover:bg-black text-white flex items-center justify-center transition-colors duration-300 shadow-xl focus:outline-none"
+        aria-label="Next Slide"
+      >
+        <ChevronRight className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
+      </button>
+
+      {/* Slide Indicator Dots */}
+      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-20 flex space-x-3">
+        {[0, 1].map((index) => (
           <button
             key={index}
             onClick={() => setCurrentSlide(index)}
             aria-label={`Go to slide ${index + 1}`}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${
-              index === currentSlide ? 'bg-[var(--color-primary)] scale-125' : 'bg-white/50 hover:bg-white'
+            className={`h-2.5 rounded-full transition-all duration-300 ${
+              index === currentSlide ? 'w-8 bg-[#e30613]' : 'w-2.5 bg-white/60 hover:bg-white'
             }`}
           />
         ))}
       </div>
+
     </section>
   );
 }
