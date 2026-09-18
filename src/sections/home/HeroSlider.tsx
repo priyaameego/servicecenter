@@ -32,7 +32,7 @@ export function HeroSlider() {
         {/* Background Image with Dark Mask & Ken Burns Effect */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <img 
-            src="https://lhe.ae/wp-content/uploads/2024/01/elementos-de-protaccion-personal-para-personas-que.jpg" 
+            src="/c.jpeg" 
             alt="Safety and Precision Care"
             className={`w-full h-full object-cover object-center brightness-90 transition-transform duration-1000 ${
               currentSlide === 0 ? 'animate-kenburns-1' : 'scale-100'

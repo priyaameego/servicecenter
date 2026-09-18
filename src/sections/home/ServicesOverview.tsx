@@ -136,9 +136,9 @@ export function ServicesOverview() {
           <div className="lg:row-span-2 relative bg-black flex flex-col justify-center items-center p-12 text-center overflow-hidden aspect-square lg:aspect-auto border border-gray-900/40 group">
             <div className="absolute inset-0 z-0 overflow-hidden">
               <img
-                src="/3.jpeg"
-                alt="Reliable Services"
-                className="w-full h-full object-cover scale-100 group-hover:scale-110 transition-transform duration-1000 ease-out"
+                src="/c3.jpeg"
+                alt="Black+Decker Home Appliances Repair & Maintenance"
+                className="w-full h-full object-cover object-center scale-100 group-hover:scale-110 transition-transform duration-1000 ease-out"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/55 to-black/35 group-hover:bg-black/50 transition-colors duration-500" />
             </div>

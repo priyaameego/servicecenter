@@ -73,6 +73,16 @@ export function RepairProcess() {
             })}
           </div>
         </div>
+
+        {/* Master Showcase Banner (c3.jpeg) */}
+        <div className="mt-14 sm:mt-16 max-w-5xl mx-auto rounded-lg overflow-hidden border border-gray-800 shadow-[0_20px_50px_rgba(0,0,0,0.8)] group reveal">
+          <img 
+            src="/c3.jpeg" 
+            alt="Black+Decker Home Appliances - Repair, Service, Genuine Parts, Expert Support"
+            className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-[1.01]"
+            loading="lazy"
+          />
+        </div>
       </div>
     </section>
   );
