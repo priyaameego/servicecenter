@@ -7,6 +7,7 @@ import { ServicesOverview } from '../sections/home/ServicesOverview';
 import { ProductsWeService } from '../sections/home/ProductsWeService';
 import { AuthorizedBrands } from '../sections/home/AuthorizedBrands';
 import { RepairProcess } from '../sections/home/RepairProcess';
+import { WorkshopGallery } from '../sections/home/WorkshopGallery';
 import { StatsSection } from '../sections/home/StatsSection';
 import { HomeBlogSection } from '../sections/home/HomeBlogSection';
 
@@ -44,7 +45,10 @@ function Index() {
       {/* 7. Repair Process Timeline */}
       <RepairProcess />
       
-      {/* 7. What We've Done (Statistics/Counters banner) */}
+      {/* 8. Workshop & Certified Technicians In Action (All 12 Client Images: c4-c15) */}
+      <WorkshopGallery />
+
+      {/* 9. What We've Done (Statistics/Counters banner) */}
       <StatsSection />
 
       {/* 8. Latest Blog Posts */}

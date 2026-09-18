@@ -62,15 +62,15 @@ export function IntroSection() {
             className="relative group block"
             aria-label="Motor Overhaul & Repairs - REPAIR INDUSTRIAL MOTORS"
           >
-            <div className="relative h-[280px] sm:h-[320px] md:h-[360px] overflow-hidden shadow-lg border border-gray-200/80 bg-black">
+            <div className="relative h-[280px] sm:h-[320px] md:h-[360px] overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.12)] group-hover:shadow-[0_16px_40px_rgba(0,0,0,0.22)] border border-gray-200/80 bg-black transition-shadow duration-300">
               <img
                 src="/c2.jpeg"
                 alt="Motor Overhaul & Repairs"
                 loading="lazy"
                 decoding="async"
-                className="w-full h-full object-cover object-center transform transition-transform duration-700 ease-out group-hover:scale-105 brightness-90"
+                className="w-full h-full object-cover object-center transform transition-transform duration-500 ease-out group-hover:scale-[1.03]"
               />
-              <div className="absolute inset-0 bg-black/60 group-hover:bg-black/50 transition-colors duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/25 group-hover:from-black/75 group-hover:via-black/35 group-hover:to-black/15 transition-colors duration-300" />
               
               <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6 sm:p-8 z-10">
                 <h3 
@@ -89,7 +89,7 @@ export function IntroSection() {
             </div>
 
             {/* Overlapping Red Icon Box at Bottom Center */}
-            <div className="absolute -bottom-8 sm:-bottom-9 md:-bottom-10 left-1/2 -translate-x-1/2 w-16 h-16 sm:w-20 sm:h-20 bg-[#e30613] flex items-center justify-center shadow-xl group-hover:scale-110 group-hover:bg-[#cc0000] transition-all duration-300 z-20">
+            <div className="absolute -bottom-8 sm:-bottom-9 md:-bottom-10 left-1/2 -translate-x-1/2 w-16 h-16 sm:w-20 sm:h-20 bg-[#e30613] flex items-center justify-center shadow-lg group-hover:scale-105 group-hover:bg-[#cc0000] transition-all duration-300 z-20">
               <RoboticArmIcon className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
             </div>
           </Link>
@@ -100,15 +100,15 @@ export function IntroSection() {
             className="relative group block"
             aria-label="Authorized Service Center For BLACK + DECKER, STANLEY, DEWALT"
           >
-            <div className="relative h-[280px] sm:h-[320px] md:h-[360px] overflow-hidden shadow-lg border border-gray-200/80 bg-black">
+            <div className="relative h-[280px] sm:h-[320px] md:h-[360px] overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.12)] group-hover:shadow-[0_16px_40px_rgba(0,0,0,0.22)] border border-gray-200/80 bg-black transition-shadow duration-300">
               <img
                 src="/c.jpeg"
                 alt="Authorized Service Center For BLACK + DECKER, STANLEY, DEWALT"
                 loading="lazy"
                 decoding="async"
-                className="w-full h-full object-cover object-center transform transition-transform duration-700 ease-out group-hover:scale-105 brightness-90"
+                className="w-full h-full object-cover object-center transform transition-transform duration-500 ease-out group-hover:scale-[1.03]"
               />
-              <div className="absolute inset-0 bg-black/60 group-hover:bg-black/50 transition-colors duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-black/25 group-hover:from-black/75 group-hover:via-black/35 group-hover:to-black/15 transition-colors duration-300" />
               
               <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6 sm:p-8 z-10">
                 <h3 
@@ -127,7 +127,7 @@ export function IntroSection() {
             </div>
 
             {/* Overlapping Red Icon Box at Bottom Center */}
-            <div className="absolute -bottom-8 sm:-bottom-9 md:-bottom-10 left-1/2 -translate-x-1/2 w-16 h-16 sm:w-20 sm:h-20 bg-[#e30613] flex items-center justify-center shadow-xl group-hover:scale-110 group-hover:bg-[#cc0000] transition-all duration-300 z-20">
+            <div className="absolute -bottom-8 sm:-bottom-9 md:-bottom-10 left-1/2 -translate-x-1/2 w-16 h-16 sm:w-20 sm:h-20 bg-[#e30613] flex items-center justify-center shadow-lg group-hover:scale-105 group-hover:bg-[#cc0000] transition-all duration-300 z-20">
               <DualGearsIcon className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
             </div>
           </Link>

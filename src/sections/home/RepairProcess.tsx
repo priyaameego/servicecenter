@@ -75,11 +75,11 @@ export function RepairProcess() {
         </div>
 
         {/* Master Showcase Banner (c3.jpeg) */}
-        <div className="mt-14 sm:mt-16 max-w-5xl mx-auto rounded-lg overflow-hidden border border-gray-800 shadow-[0_20px_50px_rgba(0,0,0,0.8)] group reveal">
+        <div className="mt-14 sm:mt-16 max-w-5xl mx-auto overflow-hidden border border-gray-800 bg-[#161616] p-2 sm:p-3 shadow-[0_24px_50px_rgba(0,0,0,0.85)] group reveal">
           <img 
             src="/c3.jpeg" 
             alt="Black+Decker Home Appliances - Repair, Service, Genuine Parts, Expert Support"
-            className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-[1.01]"
+            className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-[1.005]"
             loading="lazy"
           />
         </div>
