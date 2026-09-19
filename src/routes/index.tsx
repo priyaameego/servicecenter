@@ -9,7 +9,6 @@ import { AuthorizedBrands } from '../sections/home/AuthorizedBrands';
 import { RepairProcess } from '../sections/home/RepairProcess';
 import { WorkshopGallery } from '../sections/home/WorkshopGallery';
 import { StatsSection } from '../sections/home/StatsSection';
-import { HomeBlogSection } from '../sections/home/HomeBlogSection';
 
 export const Route = createFileRoute('/')({
   component: Index,
@@ -51,9 +50,6 @@ function Index() {
       {/* 9. What We've Done (Statistics/Counters banner) */}
       <StatsSection />
 
-      {/* 8. Latest Blog Posts */}
-      <HomeBlogSection />
-      
       {/* Note: Call to Action Banner is globally rendered in the Footer component */}
     </div>
   );

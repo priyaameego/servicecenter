@@ -84,7 +84,7 @@ export function Header() {
 
         {/* Bottom Right: Nav (Desktop) */}
         <div className="hidden lg:flex absolute bottom-0 right-0 h-[56px] w-full justify-end items-center z-20 pr-6 pl-[230px] xl:pl-[330px] 2xl:pl-[430px]">
-          <nav className="flex items-center space-x-3.5 xl:space-x-6 text-white font-heading font-bold text-xs xl:text-sm 2xl:text-base tracking-wider xl:tracking-widest h-full mr-auto">
+          <nav className="flex items-center justify-center space-x-3.5 xl:space-x-6 text-white font-heading font-bold text-xs xl:text-sm 2xl:text-base tracking-wider xl:tracking-widest h-full mx-auto">
             {navLinks.map((link) => (
               <div key={link.name} className="relative group h-full flex items-center">
                 <Link 
@@ -97,18 +97,7 @@ export function Header() {
             ))}
           </nav>
           
-          <div className="flex items-center space-x-3 xl:space-x-5 text-white ml-4 relative">
-            
-            {/* Desktop Hamburger Icon */}
-            <button 
-              className="relative group p-1.5 focus:outline-none focus:ring-2 focus:ring-white/50 rounded-full"
-              aria-label="Open menu"
-              onClick={() => setIsMobileMenuOpen(true)}
-            >
-               <Menu className="w-5 h-5 xl:w-6 xl:h-6 transition-transform duration-300 group-hover:scale-110 relative z-10" />
-               <span className="absolute inset-0 bg-white/20 blur-md rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0"></span>
-            </button>
-          </div>
+
         </div>
 
         {/* Mobile Menu Toggle Button (< lg) */}

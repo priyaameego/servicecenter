@@ -42,7 +42,7 @@ function CountUp({ end, duration = 2000 }: { end: number, duration?: number }) {
 
 export function StatsSection() {
   return (
-    <section className="bg-[#f0f0f0] relative">
+    <section className="bg-[#f0f0f0] relative pb-16 md:pb-24">
       <div className="container-custom relative z-20">
         
         {/* Negative margin to pull it UP over the previous section's dark background */}

@@ -96,40 +96,7 @@ export function WorkshopGallery() {
           </p>
         </div>
 
-        {/* View Mode Switcher Pills */}
-        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-12">
-          <button
-            onClick={() => setViewMode('hover')}
-            className={`px-4 sm:px-5 py-2 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 flex items-center gap-2 ${
-              viewMode === 'hover'
-                ? 'bg-[#FF6A00] text-white shadow-md'
-                : 'bg-white text-gray-700 border border-gray-200 hover:border-gray-400 hover:bg-gray-50'
-            }`}
-          >
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>Interactive (Color on Hover)</span>
-          </button>
-          <button
-            onClick={() => setViewMode('color')}
-            className={`px-4 sm:px-5 py-2 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 flex items-center gap-2 ${
-              viewMode === 'color'
-                ? 'bg-[#FF6A00] text-white shadow-md'
-                : 'bg-white text-gray-700 border border-gray-200 hover:border-gray-400 hover:bg-gray-50'
-            }`}
-          >
-            <span>Full Color View</span>
-          </button>
-          <button
-            onClick={() => setViewMode('bw')}
-            className={`px-4 sm:px-5 py-2 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 flex items-center gap-2 ${
-              viewMode === 'bw'
-                ? 'bg-[#FF6A00] text-white shadow-md'
-                : 'bg-white text-gray-700 border border-gray-200 hover:border-gray-400 hover:bg-gray-50'
-            }`}
-          >
-            <span>Monochrome (B&amp;W)</span>
-          </button>
-        </div>
+
 
         {/* 6 Appliance Repair Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
@@ -215,7 +182,7 @@ export function WorkshopGallery() {
         </div>
 
         {/* Bottom Guarantee Banner */}
-        <div className="mt-12 max-w-4xl mx-auto bg-white border border-gray-200 p-5 sm:p-6 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+        <div className="mt-12 mb-16 md:mb-24 max-w-4xl mx-auto bg-white border border-gray-200 p-5 sm:p-6 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 bg-[#FF6A00]/10 text-[#FF6A00] flex items-center justify-center shrink-0">
               <Wrench className="w-6 h-6" />

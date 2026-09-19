@@ -18,9 +18,10 @@ export function AuthorizedBrands() {
             <div
               key={name}
               className="group relative cursor-default select-none"
+              style={{ '--brand-color': color } as React.CSSProperties}
             >
               <span
-                className="block text-2xl md:text-3xl font-black tracking-[-0.02em] text-gray-300 group-hover:text-[#1A1A1A] transition-all duration-500 group-hover:drop-shadow-sm"
+                className="block text-2xl md:text-3xl font-black tracking-[-0.02em] text-gray-300 group-hover:text-[var(--brand-color)] transition-all duration-500 group-hover:drop-shadow-sm"
               >
                 {name}
               </span>
