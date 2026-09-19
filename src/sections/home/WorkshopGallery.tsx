@@ -69,7 +69,6 @@ const workshopItems: WorkshopItem[] = [
 ];
 
 export function WorkshopGallery() {
-  const viewMode = 'hover';
   const [activeModalItem, setActiveModalItem] = useState<WorkshopItem | null>(null);
 
   return (
@@ -113,9 +112,7 @@ export function WorkshopGallery() {
                   src={item.bwImage}
                   alt={`${item.title} - Monochrome Inspection`}
                   loading="lazy"
-                  className={`w-full h-full object-cover object-center transform transition-transform duration-700 ease-out group-hover:scale-[1.04] ${
-                    viewMode === 'color' ? 'opacity-0' : 'opacity-100'
-                  }`}
+                  className="w-full h-full object-cover object-center transform transition-transform duration-700 ease-out group-hover:scale-[1.04] opacity-100"
                 />
 
                 {/* Layer 2: Full Color Image */}
@@ -123,13 +120,7 @@ export function WorkshopGallery() {
                   src={item.colorImage}
                   alt={`${item.title} - Certified Black+Decker Service Team`}
                   loading="lazy"
-                  className={`absolute inset-0 w-full h-full object-cover object-center transform transition-all duration-700 ease-out group-hover:scale-[1.04] ${
-                    viewMode === 'color'
-                      ? 'opacity-100'
-                      : viewMode === 'bw'
-                      ? 'opacity-0'
-                      : 'opacity-0 group-hover:opacity-100'
-                  }`}
+                  className="absolute inset-0 w-full h-full object-cover object-center transform transition-all duration-700 ease-out group-hover:scale-[1.04] opacity-0 group-hover:opacity-100"
                 />
 
                 {/* Top Badge: Appliance Tag */}
