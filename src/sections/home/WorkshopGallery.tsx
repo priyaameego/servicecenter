@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Wrench, CheckCircle2, Eye, Sparkles, X } from 'lucide-react';
+import { Wrench, CheckCircle2, Eye, X } from 'lucide-react';
 
 interface WorkshopItem {
   id: string;
@@ -69,7 +69,7 @@ const workshopItems: WorkshopItem[] = [
 ];
 
 export function WorkshopGallery() {
-  const [viewMode, setViewMode] = useState<'hover' | 'color' | 'bw'>('hover');
+  const viewMode = 'hover';
   const [activeModalItem, setActiveModalItem] = useState<WorkshopItem | null>(null);
 
   return (
