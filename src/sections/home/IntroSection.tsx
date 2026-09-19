@@ -46,26 +46,26 @@ export function IntroSection() {
           <div className="section-divider-center mt-2 mb-6" />
           
           <p className="text-[#666666] text-base md:text-lg leading-relaxed mb-3">
-            At our <strong className="text-gray-900 font-semibold">Black+Decker Service Center</strong>, we provide professional repair, maintenance, and after-sales support for a wide range of Black+Decker home and kitchen appliances, motors, and electromechanical equipment.
+            At our <strong className="text-gray-900 font-semibold">Black+Decker Service Center</strong>, we provide professional repair, maintenance, and after-sales support for a wide range of Black+Decker power tools, home and kitchen appliances, and electromechanical equipment.
           </p>
           <p className="text-[#666666] text-sm sm:text-base leading-relaxed">
             A dedicated service center equipped with specialized testing facilities, diagnostic tools, and experienced technicians to ensure every product is inspected carefully and serviced to the required standards.
           </p>
         </div>
 
-        {/* 2 Image Cards Side by Side (Same as LHE.ae screenshot) */}
+        {/* 2 Image Cards Side by Side */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-12 max-w-6xl mx-auto mt-12 mb-16">
-          
-          {/* Card 1 (Left): Motor Overhaul & Repairs */}
+
+          {/* Card 1 (Left): Power Tools Repair */}
           <Link
             to="/services"
             className="relative group block"
-            aria-label="Motor Overhaul & Repairs - REPAIR INDUSTRIAL MOTORS"
+            aria-label="Power Tools Repair"
           >
             <div className="relative h-[280px] sm:h-[320px] md:h-[360px] overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.12)] group-hover:shadow-[0_16px_40px_rgba(0,0,0,0.22)] border border-gray-200/80 bg-black transition-shadow duration-300">
               <img
-                src="/c2.jpeg"
-                alt="Motor Overhaul & Repairs"
+                src="/3.jpeg"
+                alt="Power Tools Repair"
                 loading="lazy"
                 decoding="async"
                 className="w-full h-full object-cover object-center transform transition-transform duration-500 ease-out group-hover:scale-[1.03]"
@@ -77,33 +77,33 @@ export function IntroSection() {
                   className="text-2xl sm:text-3xl md:text-[34px] font-extrabold text-white mb-2 tracking-tight drop-shadow-lg"
                   style={{ fontFamily: 'var(--font-heading)' }}
                 >
-                  Motor Overhaul &amp; Repairs
+                  Expert Maintenance &amp; Repairs
                 </h3>
                 <p 
                   className="text-white text-base sm:text-lg md:text-xl font-bold uppercase tracking-wider drop-shadow-md text-white/95"
                   style={{ fontFamily: 'var(--font-heading)' }}
                 >
-                  REPAIR INDUSTRIAL MOTORS
+                  POWER TOOLS REPAIR
                 </p>
               </div>
             </div>
 
-            {/* Overlapping Red Icon Box at Bottom Center */}
-            <div className="absolute -bottom-8 sm:-bottom-9 md:-bottom-10 left-1/2 -translate-x-1/2 w-16 h-16 sm:w-20 sm:h-20 bg-[#e30613] flex items-center justify-center shadow-lg group-hover:scale-105 group-hover:bg-[#cc0000] transition-all duration-300 z-20">
+            {/* Overlapping Orange Icon Box at Bottom Center */}
+            <div className="absolute -bottom-8 sm:-bottom-9 md:-bottom-10 left-1/2 -translate-x-1/2 w-16 h-16 sm:w-20 sm:h-20 bg-[#FF6A00] flex items-center justify-center shadow-lg group-hover:scale-105 group-hover:bg-[#CC5500] transition-all duration-300 z-20">
               <RoboticArmIcon className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
             </div>
           </Link>
 
-          {/* Card 2 (Right): Authorized Service Center For BLACK + DECKER, STANLEY, DEWALT */}
+          {/* Card 2 (Right): Authorized Service Center For BLACK + DECKER */}
           <Link
             to="/services"
             className="relative group block"
-            aria-label="Authorized Service Center For BLACK + DECKER, STANLEY, DEWALT"
+            aria-label="Authorized Service Center For BLACK + DECKER"
           >
             <div className="relative h-[280px] sm:h-[320px] md:h-[360px] overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.12)] group-hover:shadow-[0_16px_40px_rgba(0,0,0,0.22)] border border-gray-200/80 bg-black transition-shadow duration-300">
               <img
                 src="/c.jpeg"
-                alt="Authorized Service Center For BLACK + DECKER, STANLEY, DEWALT"
+                alt="Authorized Service Center For BLACK + DECKER"
                 loading="lazy"
                 decoding="async"
                 className="w-full h-full object-cover object-center transform transition-transform duration-500 ease-out group-hover:scale-[1.03]"
@@ -121,13 +121,13 @@ export function IntroSection() {
                   className="text-white text-base sm:text-lg md:text-xl font-bold uppercase tracking-wider drop-shadow-md text-white/95"
                   style={{ fontFamily: 'var(--font-heading)' }}
                 >
-                  BLACK + DECKER, STANLEY, DEWALT
+                  BLACK + DECKER
                 </p>
               </div>
             </div>
 
-            {/* Overlapping Red Icon Box at Bottom Center */}
-            <div className="absolute -bottom-8 sm:-bottom-9 md:-bottom-10 left-1/2 -translate-x-1/2 w-16 h-16 sm:w-20 sm:h-20 bg-[#e30613] flex items-center justify-center shadow-lg group-hover:scale-105 group-hover:bg-[#cc0000] transition-all duration-300 z-20">
+            {/* Overlapping Orange Icon Box at Bottom Center */}
+            <div className="absolute -bottom-8 sm:-bottom-9 md:-bottom-10 left-1/2 -translate-x-1/2 w-16 h-16 sm:w-20 sm:h-20 bg-[#FF6A00] flex items-center justify-center shadow-lg group-hover:scale-105 group-hover:bg-[#CC5500] transition-all duration-300 z-20">
               <DualGearsIcon className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
             </div>
           </Link>

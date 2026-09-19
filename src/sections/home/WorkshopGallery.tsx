@@ -75,13 +75,13 @@ export function WorkshopGallery() {
   return (
     <section className="section-padding bg-[#f8f9fa] relative overflow-hidden border-t border-b border-gray-200">
       {/* Background Subtle Accents */}
-      <div className="absolute top-0 right-1/3 w-96 h-96 bg-[#e30613]/[0.03] rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-1/3 w-96 h-96 bg-[#FF6A00]/[0.03] rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-1/3 w-96 h-96 bg-gray-300/20 rounded-full blur-3xl pointer-events-none" />
 
       <div className="container-custom relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-4xl mx-auto mb-10 reveal">
-          <span className="section-eyebrow !text-[#e30613] tracking-[0.2em] uppercase font-bold text-sm sm:text-base">
+          <span className="section-eyebrow !text-[#FF6A00] tracking-[0.2em] uppercase font-bold text-sm sm:text-base">
             INSIDE OUR DUBAI WORKSHOP
           </span>
           <h2 
@@ -102,7 +102,7 @@ export function WorkshopGallery() {
             onClick={() => setViewMode('hover')}
             className={`px-4 sm:px-5 py-2 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 flex items-center gap-2 ${
               viewMode === 'hover'
-                ? 'bg-[#e30613] text-white shadow-md'
+                ? 'bg-[#FF6A00] text-white shadow-md'
                 : 'bg-white text-gray-700 border border-gray-200 hover:border-gray-400 hover:bg-gray-50'
             }`}
           >
@@ -113,7 +113,7 @@ export function WorkshopGallery() {
             onClick={() => setViewMode('color')}
             className={`px-4 sm:px-5 py-2 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 flex items-center gap-2 ${
               viewMode === 'color'
-                ? 'bg-[#e30613] text-white shadow-md'
+                ? 'bg-[#FF6A00] text-white shadow-md'
                 : 'bg-white text-gray-700 border border-gray-200 hover:border-gray-400 hover:bg-gray-50'
             }`}
           >
@@ -123,7 +123,7 @@ export function WorkshopGallery() {
             onClick={() => setViewMode('bw')}
             className={`px-4 sm:px-5 py-2 text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 flex items-center gap-2 ${
               viewMode === 'bw'
-                ? 'bg-[#e30613] text-white shadow-md'
+                ? 'bg-[#FF6A00] text-white shadow-md'
                 : 'bg-white text-gray-700 border border-gray-200 hover:border-gray-400 hover:bg-gray-50'
             }`}
           >
@@ -167,7 +167,7 @@ export function WorkshopGallery() {
 
                 {/* Top Badge: Appliance Tag */}
                 <div className="absolute top-3 left-3 z-20">
-                  <span className="inline-flex items-center gap-1.5 bg-[#e30613] text-white text-[11px] font-extrabold uppercase px-2.5 py-1 tracking-wider shadow-md">
+                  <span className="inline-flex items-center gap-1.5 bg-[#FF6A00] text-white text-[11px] font-extrabold uppercase px-2.5 py-1 tracking-wider shadow-md">
                     <Wrench className="w-3 h-3" />
                     {item.appliance}
                   </span>
@@ -175,7 +175,7 @@ export function WorkshopGallery() {
 
                 {/* Top Right: Expand / View Icon */}
                 <div className="absolute top-3 right-3 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span className="w-8 h-8 rounded-full bg-black/70 backdrop-blur-sm text-white flex items-center justify-center shadow-lg hover:bg-[#e30613] transition-colors">
+                  <span className="w-8 h-8 rounded-full bg-black/70 backdrop-blur-sm text-white flex items-center justify-center shadow-lg hover:bg-[#FF6A00] transition-colors">
                     <Eye className="w-4 h-4" />
                   </span>
                 </div>
@@ -202,10 +202,10 @@ export function WorkshopGallery() {
 
                 <div className="pt-3 border-t border-gray-100 flex items-center justify-between text-xs">
                   <div className="flex items-center gap-1.5 text-gray-700 font-semibold">
-                    <CheckCircle2 className="w-4 h-4 text-[#e30613]" />
+                    <CheckCircle2 className="w-4 h-4 text-[#FF6A00]" />
                     <span>Genuine Spare Parts</span>
                   </div>
-                  <span className="text-[#e30613] font-bold uppercase tracking-wider group-hover:translate-x-1 transition-transform">
+                  <span className="text-[#FF6A00] font-bold uppercase tracking-wider group-hover:translate-x-1 transition-transform">
                     View Details &rarr;
                   </span>
                 </div>
@@ -217,7 +217,7 @@ export function WorkshopGallery() {
         {/* Bottom Guarantee Banner */}
         <div className="mt-12 max-w-4xl mx-auto bg-white border border-gray-200 p-5 sm:p-6 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
           <div className="flex items-center gap-4">
-            <div className="w-12 h-12 bg-[#e30613]/10 text-[#e30613] flex items-center justify-center shrink-0">
+            <div className="w-12 h-12 bg-[#FF6A00]/10 text-[#FF6A00] flex items-center justify-center shrink-0">
               <Wrench className="w-6 h-6" />
             </div>
             <div>
@@ -231,7 +231,7 @@ export function WorkshopGallery() {
           </div>
           <a
             href="tel:+971800347"
-            className="shrink-0 bg-[#e30613] hover:bg-black text-white font-extrabold text-xs sm:text-sm uppercase tracking-wider px-6 py-3 transition-colors duration-300 shadow-md"
+            className="shrink-0 bg-[#FF6A00] hover:bg-black text-white font-extrabold text-xs sm:text-sm uppercase tracking-wider px-6 py-3 transition-colors duration-300 shadow-md"
             style={{ fontFamily: 'var(--font-heading)' }}
           >
             CONTACT TECHNICIAN
@@ -252,7 +252,7 @@ export function WorkshopGallery() {
             {/* Modal Header */}
             <div className="p-4 sm:p-5 border-b border-gray-800 flex items-center justify-between">
               <div>
-                <span className="text-[#e30613] text-xs font-bold uppercase tracking-widest">
+                <span className="text-[#FF6A00] text-xs font-bold uppercase tracking-widest">
                   {activeModalItem.appliance} Service
                 </span>
                 <h3 className="text-xl sm:text-2xl font-bold text-white uppercase mt-0.5">
@@ -261,7 +261,7 @@ export function WorkshopGallery() {
               </div>
               <button
                 onClick={() => setActiveModalItem(null)}
-                className="w-9 h-9 rounded-full bg-gray-800 hover:bg-[#e30613] text-white flex items-center justify-center transition-colors"
+                className="w-9 h-9 rounded-full bg-gray-800 hover:bg-[#FF6A00] text-white flex items-center justify-center transition-colors"
                 aria-label="Close Preview"
               >
                 <X className="w-5 h-5" />
@@ -288,13 +288,13 @@ export function WorkshopGallery() {
 
                 {/* Color Version */}
                 <div className="space-y-2">
-                  <div className="relative aspect-[4/3] bg-black overflow-hidden border border-[#e30613]/50">
+                  <div className="relative aspect-[4/3] bg-black overflow-hidden border border-[#FF6A00]/50">
                     <img 
                       src={activeModalItem.colorImage} 
                       alt={`${activeModalItem.title} - Full Color`} 
                       className="w-full h-full object-cover"
                     />
-                    <span className="absolute bottom-2 left-2 bg-[#e30613] text-white text-[10px] font-bold uppercase px-2 py-0.5">
+                    <span className="absolute bottom-2 left-2 bg-[#FF6A00] text-white text-[10px] font-bold uppercase px-2 py-0.5">
                       Full Color Black+Decker Service Team
                     </span>
                   </div>

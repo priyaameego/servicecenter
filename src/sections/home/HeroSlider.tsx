@@ -32,7 +32,7 @@ export function HeroSlider() {
         {/* Background Image with Dark Mask & Ken Burns Effect */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <img 
-            src="/c.jpeg" 
+            src="/1.jpeg" 
             alt="Safety and Precision Care"
             className={`w-full h-full object-cover object-center brightness-90 transition-transform duration-1000 ${
               currentSlide === 0 ? 'animate-kenburns-1' : 'scale-100'
@@ -44,7 +44,7 @@ export function HeroSlider() {
 
         {/* Center Content: Red Box Border with Headline */}
         <div className="container-custom relative z-10 h-full flex items-center justify-center px-4 sm:px-6">
-          <div className={`border-[4px] sm:border-[5px] md:border-[6px] border-[#e30613] p-6 sm:p-10 md:p-14 lg:p-16 max-w-4xl w-full text-center shadow-2xl bg-black/35 backdrop-blur-[2px] transition-all duration-700 ${
+          <div className={`border-[4px] sm:border-[5px] md:border-[6px] border-[#FF6A00] p-6 sm:p-10 md:p-14 lg:p-16 max-w-4xl w-full text-center shadow-2xl bg-black/35 backdrop-blur-[2px] transition-all duration-700 ${
             currentSlide === 0 ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'
           }`}>
             <h1 
@@ -92,27 +92,27 @@ export function HeroSlider() {
 
               {/* Bullet Points */}
               <div className="space-y-1.5 sm:space-y-2 mb-8 font-bold text-sm sm:text-base md:text-lg tracking-wider uppercase">
-                <p className="text-[#e30613] text-base sm:text-lg font-black tracking-widest mb-3">
+                <p className="text-[#FF6A00] text-base sm:text-lg font-black tracking-widest mb-3">
                   5 STAR REPRESENTATION
                 </p>
                 <p className="flex items-center gap-2 !text-white" style={{ color: '#ffffff' }}>
-                  <span className="text-[#e30613] font-black text-xl leading-none">*</span>
+                  <span className="text-[#FF6A00] font-black text-xl leading-none">*</span>
                   <span className="drop-shadow-sm">RAPID REPAIRS</span>
                 </p>
                 <p className="flex items-center gap-2 !text-white" style={{ color: '#ffffff' }}>
-                  <span className="text-[#e30613] font-black text-xl leading-none">*</span>
+                  <span className="text-[#FF6A00] font-black text-xl leading-none">*</span>
                   <span className="drop-shadow-sm">HIGHEST QUALITY</span>
                 </p>
                 <p className="flex items-center gap-2 !text-white" style={{ color: '#ffffff' }}>
-                  <span className="text-[#e30613] font-black text-xl leading-none">*</span>
+                  <span className="text-[#FF6A00] font-black text-xl leading-none">*</span>
                   <span className="drop-shadow-sm">WARRANTY REPAIRS</span>
                 </p>
                 <p className="flex items-center gap-2 !text-white" style={{ color: '#ffffff' }}>
-                  <span className="text-[#e30613] font-black text-xl leading-none">*</span>
+                  <span className="text-[#FF6A00] font-black text-xl leading-none">*</span>
                   <span className="drop-shadow-sm">GENUINE FACTORY PARTS</span>
                 </p>
                 <p className="flex items-center gap-2 !text-white" style={{ color: '#ffffff' }}>
-                  <span className="text-[#e30613] font-black text-xl leading-none">*</span>
+                  <span className="text-[#FF6A00] font-black text-xl leading-none">*</span>
                   <span className="drop-shadow-sm">ONLINE TECHNICAL SUPPORT</span>
                 </p>
               </div>
@@ -121,7 +121,7 @@ export function HeroSlider() {
               <div>
                 <a 
                   href={`tel:${dubaiBranch.phone.replace(/\s+/g, '')}`} 
-                  className="inline-block bg-white hover:bg-[#e30613] !text-black hover:!text-white font-extrabold uppercase px-8 sm:px-10 py-3.5 sm:py-4 text-sm sm:text-base tracking-widest transition-all duration-300 shadow-xl"
+                  className="inline-block bg-white hover:bg-[#FF6A00] !text-black hover:!text-white font-extrabold uppercase px-8 sm:px-10 py-3.5 sm:py-4 text-sm sm:text-base tracking-widest transition-all duration-300 shadow-xl"
                   style={{ fontFamily: 'var(--font-heading)' }}
                 >
                   CALL US
@@ -129,22 +129,8 @@ export function HeroSlider() {
               </div>
             </div>
 
-            {/* Right Column: 3 Brand Badges */}
+            {/* Right Column: Brand Badge */}
             <div className="lg:col-span-4 flex flex-row lg:flex-col items-center lg:items-end justify-start lg:justify-center gap-4 sm:gap-5">
-              
-              {/* DeWALT Badge */}
-              <div className="bg-[#FEBD11] border-4 border-black p-3 sm:p-4 w-28 sm:w-36 md:w-44 lg:w-56 shadow-2xl flex items-center justify-center">
-                <span className="font-black text-lg sm:text-2xl md:text-3xl lg:text-4xl text-black tracking-tighter uppercase select-none">
-                  DEWALT
-                </span>
-              </div>
-
-              {/* STANLEY Badge */}
-              <div className="bg-[#FFCC00] p-3 sm:p-4 w-28 sm:w-36 md:w-44 lg:w-56 shadow-2xl flex items-center justify-center">
-                <span className="font-black text-base sm:text-xl md:text-2xl lg:text-3xl text-black tracking-tight uppercase select-none">
-                  STANLEY
-                </span>
-              </div>
 
               {/* BLACK+DECKER Badge */}
               <div className="bg-black border-[3px] border-[#FF6A00] p-3 sm:p-4 w-32 sm:w-40 md:w-48 lg:w-60 shadow-2xl flex flex-col items-center justify-center">
@@ -162,7 +148,7 @@ export function HeroSlider() {
       {/* ==================== Navigation Controls: Left & Right Red Arrows ==================== */}
       <button 
         onClick={prevSlide}
-        className="absolute left-0 top-1/2 -translate-y-1/2 z-30 w-10 sm:w-12 md:w-14 h-14 sm:h-16 md:h-20 bg-[#e30613] hover:bg-black text-white flex items-center justify-center transition-colors duration-300 shadow-xl focus:outline-none"
+        className="absolute left-0 top-1/2 -translate-y-1/2 z-30 w-10 sm:w-12 md:w-14 h-14 sm:h-16 md:h-20 bg-[#FF6A00] hover:bg-black text-white flex items-center justify-center transition-colors duration-300 shadow-xl focus:outline-none"
         aria-label="Previous Slide"
       >
         <ChevronLeft className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
@@ -170,7 +156,7 @@ export function HeroSlider() {
 
       <button 
         onClick={nextSlide}
-        className="absolute right-0 top-1/2 -translate-y-1/2 z-30 w-10 sm:w-12 md:w-14 h-14 sm:h-16 md:h-20 bg-[#e30613] hover:bg-black text-white flex items-center justify-center transition-colors duration-300 shadow-xl focus:outline-none"
+        className="absolute right-0 top-1/2 -translate-y-1/2 z-30 w-10 sm:w-12 md:w-14 h-14 sm:h-16 md:h-20 bg-[#FF6A00] hover:bg-black text-white flex items-center justify-center transition-colors duration-300 shadow-xl focus:outline-none"
         aria-label="Next Slide"
       >
         <ChevronRight className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
@@ -184,7 +170,7 @@ export function HeroSlider() {
             onClick={() => setCurrentSlide(index)}
             aria-label={`Go to slide ${index + 1}`}
             className={`h-2.5 rounded-full transition-all duration-300 ${
-              index === currentSlide ? 'w-8 bg-[#e30613]' : 'w-2.5 bg-white/60 hover:bg-white'
+              index === currentSlide ? 'w-8 bg-[#FF6A00]' : 'w-2.5 bg-white/60 hover:bg-white'
             }`}
           />
         ))}

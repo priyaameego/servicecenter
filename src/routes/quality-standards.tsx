@@ -87,7 +87,7 @@ function QualityStandards() {
 
           <div className="md:w-2/3 relative">
             {/* Vertical Red Line */}
-            <div className="absolute left-[20px] md:left-[24px] top-4 bottom-4 w-0.5 bg-[#e30613]" />
+            <div className="absolute left-[20px] md:left-[24px] top-4 bottom-4 w-0.5 bg-[#FF6A00]" />
 
             <div className="space-y-8 relative z-10">
               {[
@@ -99,10 +99,10 @@ function QualityStandards() {
                 "First Aid"
               ].map((cert, i) => (
                 <div key={i} className="flex items-center gap-6">
-                  <div className="w-10 h-10 md:w-12 md:h-12 bg-[#e30613] text-white flex items-center justify-center font-bold text-lg rounded-sm z-10 shrink-0">
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-[#FF6A00] text-white flex items-center justify-center font-bold text-lg rounded-sm z-10 shrink-0">
                     {i + 1}
                   </div>
-                  <div className="absolute left-[20px] md:left-[24px] w-2 h-2 rounded-full bg-[#e30613] transform -translate-x-1/2" />
+                  <div className="absolute left-[20px] md:left-[24px] w-2 h-2 rounded-full bg-[#FF6A00] transform -translate-x-1/2" />
                   <p className="text-[#333] font-light text-base md:text-lg">{cert}</p>
                 </div>
               ))}

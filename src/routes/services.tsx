@@ -57,9 +57,6 @@ interface ContactFormData {
 
 function Services() {
   const childMatches = useChildMatches()
-  if (childMatches && childMatches.length > 0) {
-    return <Outlet />
-  }
 
   const [formData, setFormData] = useState<ContactFormData>({
     name: '',
@@ -93,6 +90,10 @@ function Services() {
       setIsSuccess(true)
       setFormData({ name: '', email: '', subject: '', message: '' })
     }, 800)
+  }
+
+  if (childMatches && childMatches.length > 0) {
+    return <Outlet />
   }
 
   return (

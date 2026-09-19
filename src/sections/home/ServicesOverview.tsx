@@ -67,7 +67,7 @@ function ServiceCardItem({
       {/* Content: Clean visual hierarchy */}
       <div className="relative z-10 flex flex-col items-center transition-transform duration-300 group-hover:-translate-y-1">
         {/* Red Icon Badge */}
-        <div className="w-14 h-14 sm:w-16 sm:h-16 bg-[#e30613] flex items-center justify-center mb-5 text-white shadow-sm transition-transform duration-300 group-hover:scale-105">
+        <div className="w-14 h-14 sm:w-16 sm:h-16 bg-[#FF6A00] flex items-center justify-center mb-5 text-white shadow-sm transition-transform duration-300 group-hover:scale-105">
           <IconComponent className="w-7 h-7 sm:w-8 sm:h-8 text-white" />
         </div>
         {/* Service Title */}
