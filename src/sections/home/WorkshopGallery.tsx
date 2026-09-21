@@ -183,7 +183,7 @@ export function WorkshopGallery() {
                 Need Your Black+Decker Appliance Serviced?
               </h4>
               <p className="text-sm text-gray-600">
-                Drop off at our Al Quoz service center or speak directly with our certified technical team.
+                Drop off at our International City service center or speak directly with our certified technical team.
               </p>
             </div>
           </div>
